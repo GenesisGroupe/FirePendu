@@ -8,12 +8,14 @@
 
 import Foundation
 
-class Game {
+final class Game {
+    var gameID: String
     var name: String
     var players: [Player]
     var turns: [Turn]
 
-    init(name: String, players: [Player], turns: [Turn]) {
+    init(gameID: String, name: String, players: [Player] = [Player](), turns: [Turn] = [Turn]()) {
+        self.gameID = gameID
         self.name = name
         self.players = players
         self.turns = turns

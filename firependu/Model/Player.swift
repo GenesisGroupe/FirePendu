@@ -9,10 +9,12 @@
 import Foundation
 
 class Player {
+    var playerID: String
     var nickName: String
     var score: Int
     
-    init(nickName: String, score: Int) {
+    init(playerID: String, nickName: String, score: Int) {
+        self.playerID = playerID
         self.nickName = nickName
         self.score = score
     }

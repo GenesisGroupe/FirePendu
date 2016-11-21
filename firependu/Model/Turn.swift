@@ -9,10 +9,12 @@
 import Foundation
 
 class Turn {
+    let turnID: String
     let player: Player
     let letter: Character
     
-    init(player: Player, letter: Character) {
+    init(turnID: String, player: Player, letter: Character) {
+        self.turnID = turnID
         self.player = player
         self.letter = letter
     }
