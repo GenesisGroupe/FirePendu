@@ -7,33 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		056D97CE79B764A1C3947E80 /* Pods_firependu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A4F1DEA1C2B35035547D89 /* Pods_firependu.framework */; };
 		6A18F3D61DE30E50008D5078 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A18F3D51DE30E50008D5078 /* Player.swift */; };
 		6A18F3D81DE31156008D5078 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A18F3D71DE31156008D5078 /* Game.swift */; };
 		6A18F3DA1DE311C8008D5078 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A18F3D91DE311C8008D5078 /* Turn.swift */; };
-		D8B67E87DC06B235B564BF6E /* Pods_firependu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E0800EDD1CE4BF9EFB39D6 /* Pods_firependu.framework */; };
-		F9D4492C1DE2ED9200F3B9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D4492B1DE2ED9200F3B9CD /* AppDelegate.swift */; };
-		F9D4492E1DE2ED9200F3B9CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D4492D1DE2ED9200F3B9CD /* ViewController.swift */; };
-		F9D449311DE2ED9200F3B9CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D4492F1DE2ED9200F3B9CD /* Main.storyboard */; };
-		F9D449331DE2ED9200F3B9CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D449321DE2ED9200F3B9CD /* Assets.xcassets */; };
-		F9D449361DE2ED9200F3B9CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D449341DE2ED9200F3B9CD /* LaunchScreen.storyboard */; };
-		F9D4493E1DE2EE7000F3B9CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9D4493D1DE2EE7000F3B9CD /* GoogleService-Info.plist */; };
+		6AE505C61DE32D1400EDCE07 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE505C31DE32D1400EDCE07 /* Game.swift */; };
+		6AE505C71DE32D1400EDCE07 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE505C41DE32D1400EDCE07 /* Player.swift */; };
+		6AE505C81DE32D1400EDCE07 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE505C51DE32D1400EDCE07 /* Turn.swift */; };
+		6AE505CC1DE32EBF00EDCE07 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE505CB1DE32EBF00EDCE07 /* FirebaseManager.swift */; };
+		F9504C411DE329FD0047ACA1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C401DE329FD0047ACA1 /* LoginViewController.swift */; };
+		F9504C431DE32A2B0047ACA1 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C421DE32A2B0047ACA1 /* StartGameViewController.swift */; };
+		F9504C451DE32A3F0047ACA1 /* ListGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C441DE32A3F0047ACA1 /* ListGameViewController.swift */; };
+		F9504C471DE32A4C0047ACA1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C461DE32A4C0047ACA1 /* GameViewController.swift */; };
+		F9504C491DE32A570047ACA1 /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C481DE32A570047ACA1 /* EndViewController.swift */; };
+		F9D449491DE3077C00F3B9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D449401DE3077C00F3B9CD /* AppDelegate.swift */; };
+		F9D4494A1DE3077C00F3B9CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D449411DE3077C00F3B9CD /* Assets.xcassets */; };
+		F9D4494B1DE3077C00F3B9CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D449421DE3077C00F3B9CD /* LaunchScreen.storyboard */; };
+		F9D4494C1DE3077C00F3B9CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D449441DE3077C00F3B9CD /* Main.storyboard */; };
+		F9D4494D1DE3077C00F3B9CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9D449461DE3077C00F3B9CD /* GoogleService-Info.plist */; };
+		F9D4494E1DE3077C00F3B9CD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9D449471DE3077C00F3B9CD /* Info.plist */; };
+		F9D4494F1DE3077C00F3B9CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D449481DE3077C00F3B9CD /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		40C5B52A71E18C8A7F9B3697 /* Pods-firependu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.debug.xcconfig"; sourceTree = "<group>"; };
+		4F5E18A646C19546CADF0E4C /* Pods-firependu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.release.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.release.xcconfig"; sourceTree = "<group>"; };
 		6A18F3D51DE30E50008D5078 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		6A18F3D71DE31156008D5078 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		6A18F3D91DE311C8008D5078 /* Turn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
-		92E0800EDD1CE4BF9EFB39D6 /* Pods_firependu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firependu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9076B936E3AF49B265A22F8 /* Pods-firependu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.release.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.release.xcconfig"; sourceTree = "<group>"; };
+		6AE505C31DE32D1400EDCE07 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		6AE505C41DE32D1400EDCE07 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		6AE505C51DE32D1400EDCE07 /* Turn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
+		6AE505CB1DE32EBF00EDCE07 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		B2A4F1DEA1C2B35035547D89 /* Pods_firependu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firependu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C44FC1BF6EAA6660E31285F0 /* Pods-firependu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.debug.xcconfig"; sourceTree = "<group>"; };
+		F9504C401DE329FD0047ACA1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F9504C421DE32A2B0047ACA1 /* StartGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
+		F9504C441DE32A3F0047ACA1 /* ListGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListGameViewController.swift; sourceTree = "<group>"; };
+		F9504C461DE32A4C0047ACA1 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		F9504C481DE32A570047ACA1 /* EndViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
 		F9D449281DE2ED9200F3B9CD /* firependu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firependu.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F9D4492B1DE2ED9200F3B9CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F9D4492D1DE2ED9200F3B9CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F9D449301DE2ED9200F3B9CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F9D449321DE2ED9200F3B9CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F9D449351DE2ED9200F3B9CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F9D449371DE2ED9200F3B9CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9D4493D1DE2EE7000F3B9CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F9D449401DE3077C00F3B9CD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F9D449411DE3077C00F3B9CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F9D449431DE3077C00F3B9CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F9D449451DE3077C00F3B9CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F9D449461DE3077C00F3B9CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F9D449471DE3077C00F3B9CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9D449481DE3077C00F3B9CD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,54 +60,67 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8B67E87DC06B235B564BF6E /* Pods_firependu.framework in Frameworks */,
+				056D97CE79B764A1C3947E80 /* Pods_firependu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6A18F3D41DE30E30008D5078 /* Model */ = {
+		3E79E2F60B00E764B4DF5D01 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6A18F3D51DE30E50008D5078 /* Player.swift */,
-				6A18F3D71DE31156008D5078 /* Game.swift */,
-				6A18F3D91DE311C8008D5078 /* Turn.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6AE505C11DE32A3800EDCE07 /* FireBase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FireBase;
-			sourceTree = "<group>";
-		};
-		9BE6386B68A4A3332D587FC1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				40C5B52A71E18C8A7F9B3697 /* Pods-firependu.debug.xcconfig */,
-				C9076B936E3AF49B265A22F8 /* Pods-firependu.release.xcconfig */,
+				C44FC1BF6EAA6660E31285F0 /* Pods-firependu.debug.xcconfig */,
+				4F5E18A646C19546CADF0E4C /* Pods-firependu.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B3E86F2FD220D24C0E628C7C /* Frameworks */ = {
+		6AE505C21DE32D1400EDCE07 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				92E0800EDD1CE4BF9EFB39D6 /* Pods_firependu.framework */,
+				6AE505C31DE32D1400EDCE07 /* Game.swift */,
+				6AE505C41DE32D1400EDCE07 /* Player.swift */,
+				6AE505C51DE32D1400EDCE07 /* Turn.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6AE505CA1DE32EB200EDCE07 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				6AE505CB1DE32EBF00EDCE07 /* FirebaseManager.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		F1B731F6520EE026252A3BA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2A4F1DEA1C2B35035547D89 /* Pods_firependu.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9504C3F1DE329E00047ACA1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F9504C401DE329FD0047ACA1 /* LoginViewController.swift */,
+				F9504C421DE32A2B0047ACA1 /* StartGameViewController.swift */,
+				F9504C441DE32A3F0047ACA1 /* ListGameViewController.swift */,
+				F9504C461DE32A4C0047ACA1 /* GameViewController.swift */,
+				F9504C481DE32A570047ACA1 /* EndViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		F9D4491F1DE2ED9200F3B9CD = {
 			isa = PBXGroup;
 			children = (
-				F9D4492A1DE2ED9200F3B9CD /* firependu */,
+				F9D4493F1DE3077C00F3B9CD /* firependu */,
 				F9D449291DE2ED9200F3B9CD /* Products */,
-				9BE6386B68A4A3332D587FC1 /* Pods */,
-				B3E86F2FD220D24C0E628C7C /* Frameworks */,
+				3E79E2F60B00E764B4DF5D01 /* Pods */,
+				F1B731F6520EE026252A3BA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,18 +132,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F9D4492A1DE2ED9200F3B9CD /* firependu */ = {
+		F9D4493F1DE3077C00F3B9CD /* firependu */ = {
 			isa = PBXGroup;
 			children = (
-				6AE505C11DE32A3800EDCE07 /* FireBase */,
-				6A18F3D41DE30E30008D5078 /* Model */,
-				F9D4492B1DE2ED9200F3B9CD /* AppDelegate.swift */,
-				F9D4492D1DE2ED9200F3B9CD /* ViewController.swift */,
-				F9D4492F1DE2ED9200F3B9CD /* Main.storyboard */,
-				F9D449321DE2ED9200F3B9CD /* Assets.xcassets */,
-				F9D449341DE2ED9200F3B9CD /* LaunchScreen.storyboard */,
-				F9D449371DE2ED9200F3B9CD /* Info.plist */,
-				F9D4493D1DE2EE7000F3B9CD /* GoogleService-Info.plist */,
+				6AE505CA1DE32EB200EDCE07 /* Firebase */,
+				6AE505C21DE32D1400EDCE07 /* Model */,
+				F9504C3F1DE329E00047ACA1 /* Controllers */,
+				F9D449401DE3077C00F3B9CD /* AppDelegate.swift */,
+				F9D449411DE3077C00F3B9CD /* Assets.xcassets */,
+				F9D449421DE3077C00F3B9CD /* LaunchScreen.storyboard */,
+				F9D449441DE3077C00F3B9CD /* Main.storyboard */,
+				F9D449461DE3077C00F3B9CD /* GoogleService-Info.plist */,
+				F9D449471DE3077C00F3B9CD /* Info.plist */,
+				F9D449481DE3077C00F3B9CD /* ViewController.swift */,
 			);
 			path = firependu;
 			sourceTree = "<group>";
@@ -177,10 +210,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9D449361DE2ED9200F3B9CD /* LaunchScreen.storyboard in Resources */,
-				F9D4493E1DE2EE7000F3B9CD /* GoogleService-Info.plist in Resources */,
-				F9D449331DE2ED9200F3B9CD /* Assets.xcassets in Resources */,
-				F9D449311DE2ED9200F3B9CD /* Main.storyboard in Resources */,
+				F9D4494C1DE3077C00F3B9CD /* Main.storyboard in Resources */,
+				F9D4494D1DE3077C00F3B9CD /* GoogleService-Info.plist in Resources */,
+				F9D4494A1DE3077C00F3B9CD /* Assets.xcassets in Resources */,
+				F9D4494E1DE3077C00F3B9CD /* Info.plist in Resources */,
+				F9D4494B1DE3077C00F3B9CD /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,30 +274,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A18F3DA1DE311C8008D5078 /* Turn.swift in Sources */,
-				F9D4492E1DE2ED9200F3B9CD /* ViewController.swift in Sources */,
 				6A18F3D61DE30E50008D5078 /* Player.swift in Sources */,
-				F9D4492C1DE2ED9200F3B9CD /* AppDelegate.swift in Sources */,
+				6AE505CC1DE32EBF00EDCE07 /* FirebaseManager.swift in Sources */,
 				6A18F3D81DE31156008D5078 /* Game.swift in Sources */,
+				F9504C411DE329FD0047ACA1 /* LoginViewController.swift in Sources */,
+				6AE505C71DE32D1400EDCE07 /* Player.swift in Sources */,
+				6AE505C81DE32D1400EDCE07 /* Turn.swift in Sources */,
+				F9D4494F1DE3077C00F3B9CD /* ViewController.swift in Sources */,
+				F9D449491DE3077C00F3B9CD /* AppDelegate.swift in Sources */,
+				6AE505C61DE32D1400EDCE07 /* Game.swift in Sources */,
+				F9504C491DE32A570047ACA1 /* EndViewController.swift in Sources */,
+				F9504C431DE32A2B0047ACA1 /* StartGameViewController.swift in Sources */,
+				F9504C471DE32A4C0047ACA1 /* GameViewController.swift in Sources */,
+				F9504C451DE32A3F0047ACA1 /* ListGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F9D4492F1DE2ED9200F3B9CD /* Main.storyboard */ = {
+		F9D449421DE3077C00F3B9CD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F9D449301DE2ED9200F3B9CD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F9D449341DE2ED9200F3B9CD /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F9D449351DE2ED9200F3B9CD /* Base */,
+				F9D449431DE3077C00F3B9CD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F9D449441DE3077C00F3B9CD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9D449451DE3077C00F3B9CD /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -364,10 +407,11 @@
 		};
 		F9D4493B1DE2ED9200F3B9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40C5B52A71E18C8A7F9B3697 /* Pods-firependu.debug.xcconfig */;
+			baseConfigurationReference = C44FC1BF6EAA6660E31285F0 /* Pods-firependu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = firependu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.genesisgroupe.firependu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -377,10 +421,11 @@
 		};
 		F9D4493C1DE2ED9200F3B9CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9076B936E3AF49B265A22F8 /* Pods-firependu.release.xcconfig */;
+			baseConfigurationReference = 4F5E18A646C19546CADF0E4C /* Pods-firependu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = firependu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.genesisgroupe.firependu;
 				PRODUCT_NAME = "$(TARGET_NAME)";

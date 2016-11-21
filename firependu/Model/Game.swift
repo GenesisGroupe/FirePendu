@@ -13,7 +13,7 @@ class Game {
     var players: [Player]
     var turns: [Turn]
 
-    init(name: String, players: [Player], turns: [Turn]) {
+    convenience init(name: String, players: [Player], turns: [Turn]) {
         self.name = name
         self.players = players
         self.turns = turns
