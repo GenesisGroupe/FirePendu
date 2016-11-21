@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A18F3D61DE30E50008D5078 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A18F3D51DE30E50008D5078 /* Player.swift */; };
+		6A18F3D81DE31156008D5078 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A18F3D71DE31156008D5078 /* Game.swift */; };
+		6A18F3DA1DE311C8008D5078 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A18F3D91DE311C8008D5078 /* Turn.swift */; };
 		D8B67E87DC06B235B564BF6E /* Pods_firependu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E0800EDD1CE4BF9EFB39D6 /* Pods_firependu.framework */; };
 		F9D4492C1DE2ED9200F3B9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D4492B1DE2ED9200F3B9CD /* AppDelegate.swift */; };
 		F9D4492E1DE2ED9200F3B9CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D4492D1DE2ED9200F3B9CD /* ViewController.swift */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		40C5B52A71E18C8A7F9B3697 /* Pods-firependu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.debug.xcconfig"; sourceTree = "<group>"; };
+		6A18F3D51DE30E50008D5078 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		6A18F3D71DE31156008D5078 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		6A18F3D91DE311C8008D5078 /* Turn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
 		92E0800EDD1CE4BF9EFB39D6 /* Pods_firependu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firependu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9076B936E3AF49B265A22F8 /* Pods-firependu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.release.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.release.xcconfig"; sourceTree = "<group>"; };
 		F9D449281DE2ED9200F3B9CD /* firependu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firependu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +48,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A18F3D41DE30E30008D5078 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6A18F3D51DE30E50008D5078 /* Player.swift */,
+				6A18F3D71DE31156008D5078 /* Game.swift */,
+				6A18F3D91DE311C8008D5078 /* Turn.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6AE505C11DE32A3800EDCE07 /* FireBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FireBase;
+			sourceTree = "<group>";
+		};
 		9BE6386B68A4A3332D587FC1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +103,8 @@
 		F9D4492A1DE2ED9200F3B9CD /* firependu */ = {
 			isa = PBXGroup;
 			children = (
+				6AE505C11DE32A3800EDCE07 /* FireBase */,
+				6A18F3D41DE30E30008D5078 /* Model */,
 				F9D4492B1DE2ED9200F3B9CD /* AppDelegate.swift */,
 				F9D4492D1DE2ED9200F3B9CD /* ViewController.swift */,
 				F9D4492F1DE2ED9200F3B9CD /* Main.storyboard */,
@@ -214,8 +239,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A18F3DA1DE311C8008D5078 /* Turn.swift in Sources */,
 				F9D4492E1DE2ED9200F3B9CD /* ViewController.swift in Sources */,
+				6A18F3D61DE30E50008D5078 /* Player.swift in Sources */,
 				F9D4492C1DE2ED9200F3B9CD /* AppDelegate.swift in Sources */,
+				6A18F3D81DE31156008D5078 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
