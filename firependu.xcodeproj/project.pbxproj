@@ -9,17 +9,16 @@
 /* Begin PBXBuildFile section */
 		056D97CE79B764A1C3947E80 /* Pods_firependu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A4F1DEA1C2B35035547D89 /* Pods_firependu.framework */; };
 		F9504C411DE329FD0047ACA1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C401DE329FD0047ACA1 /* LoginViewController.swift */; };
-		F9504C431DE32A2B0047ACA1 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C421DE32A2B0047ACA1 /* StartGameViewController.swift */; };
 		F9504C451DE32A3F0047ACA1 /* ListGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C441DE32A3F0047ACA1 /* ListGameViewController.swift */; };
 		F9504C471DE32A4C0047ACA1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C461DE32A4C0047ACA1 /* GameViewController.swift */; };
 		F9504C491DE32A570047ACA1 /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C481DE32A570047ACA1 /* EndViewController.swift */; };
+		F9504C4B1DE333380047ACA1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C4A1DE333380047ACA1 /* CreateAccountViewController.swift */; };
 		F9D449491DE3077C00F3B9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D449401DE3077C00F3B9CD /* AppDelegate.swift */; };
 		F9D4494A1DE3077C00F3B9CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D449411DE3077C00F3B9CD /* Assets.xcassets */; };
 		F9D4494B1DE3077C00F3B9CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D449421DE3077C00F3B9CD /* LaunchScreen.storyboard */; };
 		F9D4494C1DE3077C00F3B9CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D449441DE3077C00F3B9CD /* Main.storyboard */; };
 		F9D4494D1DE3077C00F3B9CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9D449461DE3077C00F3B9CD /* GoogleService-Info.plist */; };
 		F9D4494E1DE3077C00F3B9CD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9D449471DE3077C00F3B9CD /* Info.plist */; };
-		F9D4494F1DE3077C00F3B9CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D449481DE3077C00F3B9CD /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,10 +26,10 @@
 		B2A4F1DEA1C2B35035547D89 /* Pods_firependu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firependu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44FC1BF6EAA6660E31285F0 /* Pods-firependu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.debug.xcconfig"; sourceTree = "<group>"; };
 		F9504C401DE329FD0047ACA1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		F9504C421DE32A2B0047ACA1 /* StartGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
 		F9504C441DE32A3F0047ACA1 /* ListGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListGameViewController.swift; sourceTree = "<group>"; };
 		F9504C461DE32A4C0047ACA1 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		F9504C481DE32A570047ACA1 /* EndViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
+		F9504C4A1DE333380047ACA1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		F9D449281DE2ED9200F3B9CD /* firependu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firependu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D449401DE3077C00F3B9CD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D449411DE3077C00F3B9CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,7 +37,6 @@
 		F9D449451DE3077C00F3B9CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9D449461DE3077C00F3B9CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F9D449471DE3077C00F3B9CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9D449481DE3077C00F3B9CD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +72,10 @@
 			isa = PBXGroup;
 			children = (
 				F9504C401DE329FD0047ACA1 /* LoginViewController.swift */,
-				F9504C421DE32A2B0047ACA1 /* StartGameViewController.swift */,
 				F9504C441DE32A3F0047ACA1 /* ListGameViewController.swift */,
 				F9504C461DE32A4C0047ACA1 /* GameViewController.swift */,
 				F9504C481DE32A570047ACA1 /* EndViewController.swift */,
+				F9504C4A1DE333380047ACA1 /* CreateAccountViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -110,7 +108,6 @@
 				F9D449441DE3077C00F3B9CD /* Main.storyboard */,
 				F9D449461DE3077C00F3B9CD /* GoogleService-Info.plist */,
 				F9D449471DE3077C00F3B9CD /* Info.plist */,
-				F9D449481DE3077C00F3B9CD /* ViewController.swift */,
 			);
 			path = firependu;
 			sourceTree = "<group>";
@@ -239,11 +236,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9504C4B1DE333380047ACA1 /* CreateAccountViewController.swift in Sources */,
 				F9504C411DE329FD0047ACA1 /* LoginViewController.swift in Sources */,
-				F9D4494F1DE3077C00F3B9CD /* ViewController.swift in Sources */,
 				F9D449491DE3077C00F3B9CD /* AppDelegate.swift in Sources */,
 				F9504C491DE32A570047ACA1 /* EndViewController.swift in Sources */,
-				F9504C431DE32A2B0047ACA1 /* StartGameViewController.swift in Sources */,
 				F9504C471DE32A4C0047ACA1 /* GameViewController.swift in Sources */,
 				F9504C451DE32A3F0047ACA1 /* ListGameViewController.swift in Sources */,
 			);

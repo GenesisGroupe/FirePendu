@@ -9,6 +9,8 @@
 import UIKit
 
 class ListGameViewController: UIViewController {
+    
+    @IBOutlet weak var tvGames: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,16 +22,30 @@ class ListGameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func actionCreateGame(_ sender: AnyObject) {
+        performSegue(withIdentifier: "goToGame", sender: nil)
     }
-    */
 
+}
+
+extension ListGameViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+}
+
+extension ListGameViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
 }
