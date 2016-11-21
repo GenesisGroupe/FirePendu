@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8B67E87DC06B235B564BF6E /* Pods_firependu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E0800EDD1CE4BF9EFB39D6 /* Pods_firependu.framework */; };
 		F9D4492C1DE2ED9200F3B9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D4492B1DE2ED9200F3B9CD /* AppDelegate.swift */; };
 		F9D4492E1DE2ED9200F3B9CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D4492D1DE2ED9200F3B9CD /* ViewController.swift */; };
 		F9D449311DE2ED9200F3B9CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D4492F1DE2ED9200F3B9CD /* Main.storyboard */; };
 		F9D449331DE2ED9200F3B9CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D449321DE2ED9200F3B9CD /* Assets.xcassets */; };
 		F9D449361DE2ED9200F3B9CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D449341DE2ED9200F3B9CD /* LaunchScreen.storyboard */; };
+		F9D4493E1DE2EE7000F3B9CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9D4493D1DE2EE7000F3B9CD /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40C5B52A71E18C8A7F9B3697 /* Pods-firependu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.debug.xcconfig"; sourceTree = "<group>"; };
+		92E0800EDD1CE4BF9EFB39D6 /* Pods_firependu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firependu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9076B936E3AF49B265A22F8 /* Pods-firependu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.release.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.release.xcconfig"; sourceTree = "<group>"; };
 		F9D449281DE2ED9200F3B9CD /* firependu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firependu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D4492B1DE2ED9200F3B9CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D4492D1DE2ED9200F3B9CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		F9D449321DE2ED9200F3B9CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9D449351DE2ED9200F3B9CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9D449371DE2ED9200F3B9CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9D4493D1DE2EE7000F3B9CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8B67E87DC06B235B564BF6E /* Pods_firependu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9BE6386B68A4A3332D587FC1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				40C5B52A71E18C8A7F9B3697 /* Pods-firependu.debug.xcconfig */,
+				C9076B936E3AF49B265A22F8 /* Pods-firependu.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B3E86F2FD220D24C0E628C7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92E0800EDD1CE4BF9EFB39D6 /* Pods_firependu.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F9D4491F1DE2ED9200F3B9CD = {
 			isa = PBXGroup;
 			children = (
 				F9D4492A1DE2ED9200F3B9CD /* firependu */,
 				F9D449291DE2ED9200F3B9CD /* Products */,
+				9BE6386B68A4A3332D587FC1 /* Pods */,
+				B3E86F2FD220D24C0E628C7C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +86,7 @@
 				F9D449321DE2ED9200F3B9CD /* Assets.xcassets */,
 				F9D449341DE2ED9200F3B9CD /* LaunchScreen.storyboard */,
 				F9D449371DE2ED9200F3B9CD /* Info.plist */,
+				F9D4493D1DE2EE7000F3B9CD /* GoogleService-Info.plist */,
 			);
 			path = firependu;
 			sourceTree = "<group>";
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9D4493A1DE2ED9200F3B9CD /* Build configuration list for PBXNativeTarget "firependu" */;
 			buildPhases = (
+				B8E18FCD9787D718F51FCDE1 /* [CP] Check Pods Manifest.lock */,
 				F9D449241DE2ED9200F3B9CD /* Sources */,
 				F9D449251DE2ED9200F3B9CD /* Frameworks */,
 				F9D449261DE2ED9200F3B9CD /* Resources */,
+				7762159CA40539430FF2E575 /* [CP] Embed Pods Frameworks */,
+				5106295381F563A95ED575AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,12 +153,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9D449361DE2ED9200F3B9CD /* LaunchScreen.storyboard in Resources */,
+				F9D4493E1DE2EE7000F3B9CD /* GoogleService-Info.plist in Resources */,
 				F9D449331DE2ED9200F3B9CD /* Assets.xcassets in Resources */,
 				F9D449311DE2ED9200F3B9CD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5106295381F563A95ED575AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-firependu/Pods-firependu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7762159CA40539430FF2E575 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-firependu/Pods-firependu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8E18FCD9787D718F51FCDE1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F9D449241DE2ED9200F3B9CD /* Sources */ = {
@@ -257,6 +336,7 @@
 		};
 		F9D4493B1DE2ED9200F3B9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40C5B52A71E18C8A7F9B3697 /* Pods-firependu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = firependu/Info.plist;
@@ -269,6 +349,7 @@
 		};
 		F9D4493C1DE2ED9200F3B9CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9076B936E3AF49B265A22F8 /* Pods-firependu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = firependu/Info.plist;
@@ -298,6 +379,7 @@
 				F9D4493C1DE2ED9200F3B9CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
