@@ -26,12 +26,28 @@ class CreateAccountViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func actionCreateAccount(_ sender: AnyObject) {
+    @IBAction func actionCreateAccount(_ sender: AnyObject?) {
 
     }
 
 }
 
-extension CreateAccountViewController: UICollectionViewDelegateFlowLayout {
+extension CreateAccountViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        var tfResponder: UITextField? = nil
+        if textField == tfUsername {
+            tfResponder = tfEmail
+        } else if textField == tfEmail {
+            tfResponder = tfPassword
+        } else if textField == tfPassword {
+            tfResponder = tfPasswordConfirm
+        } else {
+            actionCreateAccount(nil)
+        }
+        textField.resignFirstResponder()
+        tfResponder?.becomeFirstResponder()
+        return true
+    }
     
 }

@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
     
 
     //MARK: Actions
-    @IBAction func actionLogin(_ sender: AnyObject) {
+    @IBAction func actionLogin(_ sender: AnyObject?) {
         performSegue(withIdentifier: "goToGameList", sender: nil)
     }
 
@@ -56,6 +56,18 @@ class LoginViewController: UIViewController {
 
 
 extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        var tfResponder: UITextField? = nil
+        if textField == tfEmail {
+            tfResponder = tfPassword
+        } else {
+            actionLogin(nil)
+        }
+        textField.resignFirstResponder()
+        tfResponder?.becomeFirstResponder()
+        return true
+    }
 
 }
 
