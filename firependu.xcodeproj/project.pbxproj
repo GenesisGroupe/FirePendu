@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14242A4D1DE3051C00068788 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14242A4C1DE3051C00068788 /* User.swift */; };
+		14AD43FF1DE33C60008B1B9F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD43FE1DE33C60008B1B9F /* Game.swift */; };
 		D8B67E87DC06B235B564BF6E /* Pods_firependu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E0800EDD1CE4BF9EFB39D6 /* Pods_firependu.framework */; };
 		F9D4492C1DE2ED9200F3B9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D4492B1DE2ED9200F3B9CD /* AppDelegate.swift */; };
 		F9D4492E1DE2ED9200F3B9CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D4492D1DE2ED9200F3B9CD /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14242A4C1DE3051C00068788 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		14AD43FE1DE33C60008B1B9F /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		40C5B52A71E18C8A7F9B3697 /* Pods-firependu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.debug.xcconfig"; sourceTree = "<group>"; };
 		92E0800EDD1CE4BF9EFB39D6 /* Pods_firependu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firependu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9076B936E3AF49B265A22F8 /* Pods-firependu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.release.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.release.xcconfig"; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 			children = (
 				F9D4492B1DE2ED9200F3B9CD /* AppDelegate.swift */,
 				F9D4492D1DE2ED9200F3B9CD /* ViewController.swift */,
+				14242A4C1DE3051C00068788 /* User.swift */,
+				14AD43FE1DE33C60008B1B9F /* Game.swift */,
 				F9D4492F1DE2ED9200F3B9CD /* Main.storyboard */,
 				F9D449321DE2ED9200F3B9CD /* Assets.xcassets */,
 				F9D449341DE2ED9200F3B9CD /* LaunchScreen.storyboard */,
@@ -215,7 +221,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9D4492E1DE2ED9200F3B9CD /* ViewController.swift in Sources */,
+				14242A4D1DE3051C00068788 /* User.swift in Sources */,
 				F9D4492C1DE2ED9200F3B9CD /* AppDelegate.swift in Sources */,
+				14AD43FF1DE33C60008B1B9F /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +348,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = firependu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.genesisgroupe.firependu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,6 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = firependu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.genesisgroupe.firependu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
