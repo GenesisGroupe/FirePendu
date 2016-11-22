@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateAccountViewController: UIViewController {
+class CreateAccountViewController: GenericViewController {
 
     @IBOutlet weak var tfUsername: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
@@ -26,8 +26,26 @@ class CreateAccountViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func validate() -> Bool {
+        return tfUsername.text != "" && tfEmail.text != "" && tfPassword.text != "" && tfPasswordConfirm.text != "" && tfPassword.text == tfPasswordConfirm.text
+    }
+    
+    
+    
     @IBAction func actionCreateAccount(_ sender: AnyObject?) {
-
+        if validate() {
+            Loader.show()
+            AuthentificationManager.shared.register(withEmail: tfEmail.text!, tfPassword.text!, andUsername: tfUsername.text!, completionHandler: { (user, error) in
+                Loader.hide()
+                if user != nil && error == nil {
+                    self.pop(true)
+                } else {
+                    self.showAlert(with: nil, message: "Erreur d'authentification. Veuillez réessayer.", actions: nil)
+                }
+            })
+        } else {
+            self.showAlert(with: nil, message: "Il y a des erreurs dans le formulaire. Veuillez remplir tous les champs et vérifier que les mots de passe correspondent.", actions: nil)
+        }
     }
 
 }

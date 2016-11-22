@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: GenericViewController {
    
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
@@ -34,10 +34,26 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func validate() -> Bool {
+        return tfEmail.text != "" && tfPassword.text != ""
+    }
 
     //MARK: Actions
     @IBAction func actionLogin(_ sender: AnyObject?) {
-        performSegue(withIdentifier: "goToGameList", sender: nil)
+        if validate() {
+            Loader.show()
+            AuthentificationManager.shared.logIn(withEmail: tfEmail.text!, andPassword: tfPassword.text!, completionHandler: { (user, error) in
+                Loader.hide()
+                if user != nil && error == nil {
+                    self.performSegue(withIdentifier: "goToGameList", sender: nil)
+                } else {
+                    self.showAlert(with: nil, message: "Erreur d'authentification. Veuillez réessayer.", actions: nil)
+                }
+            })
+        } else {
+            self.showAlert(with: nil, message: "Tous les champs ne sont pas remplis", actions: nil)
+        }
     }
 
     @IBAction func actionLoginWithGoogle(_ sender: AnyObject) {

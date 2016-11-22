@@ -15,6 +15,10 @@
 		F9504C4B1DE333380047ACA1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C4A1DE333380047ACA1 /* CreateAccountViewController.swift */; };
 		F9504C4E1DE33BC40047ACA1 /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C4D1DE33BC40047ACA1 /* BorderedTextField.swift */; };
 		F9504C501DE340670047ACA1 /* LetterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C4F1DE340670047ACA1 /* LetterCell.swift */; };
+		F968834A1DE43C4000522FCD /* AuthentificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96883491DE43C4000522FCD /* AuthentificationManager.swift */; };
+		F968834D1DE43FF700522FCD /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968834B1DE43FF700522FCD /* Loader.swift */; };
+		F968834E1DE43FF700522FCD /* MultiColorLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968834C1DE43FF700522FCD /* MultiColorLoader.swift */; };
+		F96883501DE4400400522FCD /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968834F1DE4400400522FCD /* GenericViewController.swift */; };
 		F9D449491DE3077C00F3B9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D449401DE3077C00F3B9CD /* AppDelegate.swift */; };
 		F9D4494A1DE3077C00F3B9CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D449411DE3077C00F3B9CD /* Assets.xcassets */; };
 		F9D4494B1DE3077C00F3B9CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D449421DE3077C00F3B9CD /* LaunchScreen.storyboard */; };
@@ -34,6 +38,10 @@
 		F9504C4A1DE333380047ACA1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		F9504C4D1DE33BC40047ACA1 /* BorderedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
 		F9504C4F1DE340670047ACA1 /* LetterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterCell.swift; sourceTree = "<group>"; };
+		F96883491DE43C4000522FCD /* AuthentificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationManager.swift; sourceTree = "<group>"; };
+		F968834B1DE43FF700522FCD /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		F968834C1DE43FF700522FCD /* MultiColorLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiColorLoader.swift; sourceTree = "<group>"; };
+		F968834F1DE4400400522FCD /* GenericViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
 		F9D449281DE2ED9200F3B9CD /* firependu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firependu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D449401DE3077C00F3B9CD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D449411DE3077C00F3B9CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +83,7 @@
 		F9504C3F1DE329E00047ACA1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F968834F1DE4400400522FCD /* GenericViewController.swift */,
 				F9504C401DE329FD0047ACA1 /* LoginViewController.swift */,
 				F9504C441DE32A3F0047ACA1 /* ListGameViewController.swift */,
 				F9504C461DE32A4C0047ACA1 /* GameViewController.swift */,
@@ -87,6 +96,8 @@
 		F9504C4C1DE33B9C0047ACA1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F968834B1DE43FF700522FCD /* Loader.swift */,
+				F968834C1DE43FF700522FCD /* MultiColorLoader.swift */,
 				F9504C4D1DE33BC40047ACA1 /* BorderedTextField.swift */,
 				F9504C4F1DE340670047ACA1 /* LetterCell.swift */,
 			);
@@ -114,6 +125,7 @@
 		F9D4493F1DE3077C00F3B9CD /* firependu */ = {
 			isa = PBXGroup;
 			children = (
+				F96883491DE43C4000522FCD /* AuthentificationManager.swift */,
 				F9504C4C1DE33B9C0047ACA1 /* Views */,
 				F9504C3F1DE329E00047ACA1 /* Controllers */,
 				F9D449401DE3077C00F3B9CD /* AppDelegate.swift */,
@@ -250,11 +262,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F968834E1DE43FF700522FCD /* MultiColorLoader.swift in Sources */,
 				F9504C4B1DE333380047ACA1 /* CreateAccountViewController.swift in Sources */,
 				F9504C411DE329FD0047ACA1 /* LoginViewController.swift in Sources */,
 				F9D449491DE3077C00F3B9CD /* AppDelegate.swift in Sources */,
 				F9504C501DE340670047ACA1 /* LetterCell.swift in Sources */,
+				F968834D1DE43FF700522FCD /* Loader.swift in Sources */,
+				F96883501DE4400400522FCD /* GenericViewController.swift in Sources */,
 				F9504C491DE32A570047ACA1 /* EndViewController.swift in Sources */,
+				F968834A1DE43C4000522FCD /* AuthentificationManager.swift in Sources */,
 				F9504C471DE32A4C0047ACA1 /* GameViewController.swift in Sources */,
 				F9504C4E1DE33BC40047ACA1 /* BorderedTextField.swift in Sources */,
 				F9504C451DE32A3F0047ACA1 /* ListGameViewController.swift in Sources */,

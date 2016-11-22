@@ -9,14 +9,18 @@
 import Foundation
 import Firebase
 
-class User {
+class AuthentificationManager {
+    
+    static let shared = AuthentificationManager()
 	
-	func register(withEmail email: String, andPassword password: String) {
+    func register(withEmail email: String, _ password: String, andUsername username: String, completionHandler: @escaping (_ user: FIRUser?, _ error: Error?) -> Void) {
 		FIRAuth.auth()?.createUser(withEmail: email, password: password) {
 			(user, error) in
 			if error == nil, let user = user {
 				print("User created")
+                self.set(name: username, for: user)
 				self.sendVerificationEmail(user: user)
+                completionHandler(user, error)
 			}
 			else {
 				print("registration error: \(error)")
@@ -24,9 +28,10 @@ class User {
 		}
 	}
 	
-	func logIn(withEmail email: String, andPassword password: String) {
+	func logIn(withEmail email: String, andPassword password: String, completionHandler: @escaping (_ user: FIRUser?, _ error: Error?) -> Void) {
 		FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
 			self.printUserInfos()
+            completionHandler(user, error)
 		}
 	}
 	
@@ -45,20 +50,17 @@ class User {
 		}
 	}
 	
-	func set(name: String) {
-		let user = FIRAuth.auth()?.currentUser
-		if let user = user {
-			let changeRequest = user.profileChangeRequest()
-			changeRequest.displayName = name
-			changeRequest.commitChanges {
-				error in
-				if let error = error {
-					print("Erreur: Le nom n'a pas pu etre modifier: \(error)")
-				} else {
-					print("Le nom a été modifié")
-				}
-			}
-		}
+    func set(name: String, for user: FIRUser) {
+        let changeRequest = user.profileChangeRequest()
+        changeRequest.displayName = name
+        changeRequest.commitChanges {
+            error in
+            if let error = error {
+                print("Erreur: Le nom n'a pas pu etre modifier: \(error)")
+            } else {
+                print("Le nom a été modifié")
+            }
+        }
 	}
 	
 	func sendVerificationEmail(user: FIRUser) {
