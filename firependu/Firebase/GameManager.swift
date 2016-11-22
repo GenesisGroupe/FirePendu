@@ -38,10 +38,11 @@ class GameManager {
             let gameID = games["id"] as? String ?? ""
             let name = games["name"] as? String ?? ""
             let word = games["word"] as? String ?? ""
-            guard games["guest"] == nil,
-                let host = games["host"] as? [String: AnyObject],
+            guard let host = games["host"] as? [String: AnyObject],
                 let uid = host["uid"] as? String,
-                let nickName = host["name"] as? String else {
+                let nickName = host["name"] as? String,
+                let user = FIRAuth.auth()?.currentUser,
+                games["guest"] == nil || games["guest"]!["uid"] as! String == user.uid || uid == user.uid else {
                     completionHandler(false)
                     return
             }
