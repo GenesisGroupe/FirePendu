@@ -11,14 +11,15 @@ import Foundation
 final class Game {
     var gameID: String
     var name: String
-    var players: [Player]
-    var turns: [Turn]
+    var word: Word
+    var playerIDs: [String]
+    var turnIDs: [String]
 
-    init(gameID: String, name: String, players: [Player] = [Player](), turns: [Turn] = [Turn]()) {
+    init(gameID: String = "", name: String = "", word: String = "", playerIDs: [String] = [String](), turnIDs: [String] = [String]()) {
         self.gameID = gameID
         self.name = name
-        self.players = players
-        self.turns = turns
+        self.word = Word(value: word)
+        self.playerIDs = playerIDs
+        self.turnIDs = turnIDs
     }
-    
 }

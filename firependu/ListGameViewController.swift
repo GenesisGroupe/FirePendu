@@ -28,8 +28,8 @@ class ListGameViewController: UIViewController {
     }
 
     
-    @IBAction func actionCreateGame(_ sender: AnyObject) {
-        performSegue(withIdentifier: "goToGame", sender: nil)
+    @IBAction func actionCreateGame(_ sender: AnyObject) {        
+        //performSegue(withIdentifier: "goToGame", sender: nil)
     }
     
     // MARK: Firebase related methods
@@ -39,12 +39,13 @@ class ListGameViewController: UIViewController {
         gamesRefHandle = FirebaseManager().gamesRef.observe(.childAdded, with: {[unowned self] (snapshot) -> Void in // 1
             let gamesData = snapshot.value as! Dictionary<String, AnyObject> // 2
             let id = snapshot.key
-            if let name = gamesData["name"] as? String, name.characters.count > 0 {
-                let game = Game(gameID: id, name: name)
-                self.games.append(game)
-                self.tvGames.reloadData()
+            if let name = gamesData["name"] as? String, !name.isEmpty,
+               let word = gamesData["word"] as? String, !word.isEmpty {
+                    let game = Game(gameID: id, name: name, word: word)
+                    self.games.append(game)
+                    self.tvGames.reloadData()
             } else {
-                print("Error! Could not decode channel data")
+                print("Error! Could not decode games data")
             }
         })
     }

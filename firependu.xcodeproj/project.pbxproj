@@ -12,6 +12,10 @@
 		6AE505C71DE32D1400EDCE07 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE505C41DE32D1400EDCE07 /* Player.swift */; };
 		6AE505C81DE32D1400EDCE07 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE505C51DE32D1400EDCE07 /* Turn.swift */; };
 		6AE505CC1DE32EBF00EDCE07 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE505CB1DE32EBF00EDCE07 /* FirebaseManager.swift */; };
+		6AE505D01DE34FD200EDCE07 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE505CF1DE34FD200EDCE07 /* String+extensions.swift */; };
+		6AE505D21DE3575800EDCE07 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE505D11DE3575800EDCE07 /* Word.swift */; };
+		6AE505D41DE3599A00EDCE07 /* FirebaseObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE505D31DE3599A00EDCE07 /* FirebaseObjectProtocol.swift */; };
+		6AE505D61DE421F400EDCE07 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6AE505D51DE421F400EDCE07 /* words.txt */; };
 		F9504C411DE329FD0047ACA1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C401DE329FD0047ACA1 /* LoginViewController.swift */; };
 		F9504C451DE32A3F0047ACA1 /* ListGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C441DE32A3F0047ACA1 /* ListGameViewController.swift */; };
 		F9504C471DE32A4C0047ACA1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C461DE32A4C0047ACA1 /* GameViewController.swift */; };
@@ -26,11 +30,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F5E18A646C19546CADF0E4C /* Pods-firependu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.release.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.release.xcconfig"; sourceTree = "<group>"; };
 		6AE505C31DE32D1400EDCE07 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		6AE505C41DE32D1400EDCE07 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		6AE505C51DE32D1400EDCE07 /* Turn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
 		6AE505CB1DE32EBF00EDCE07 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
-		4F5E18A646C19546CADF0E4C /* Pods-firependu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.release.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.release.xcconfig"; sourceTree = "<group>"; };
+		6AE505CF1DE34FD200EDCE07 /* String+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
+		6AE505D11DE3575800EDCE07 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		6AE505D31DE3599A00EDCE07 /* FirebaseObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseObjectProtocol.swift; sourceTree = "<group>"; };
+		6AE505D51DE421F400EDCE07 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		B2A4F1DEA1C2B35035547D89 /* Pods_firependu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firependu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44FC1BF6EAA6660E31285F0 /* Pods-firependu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.debug.xcconfig"; sourceTree = "<group>"; };
 		F9504C401DE329FD0047ACA1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -59,12 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E79E2F60B00E764B4DF5D01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C44FC1BF6EAA6660E31285F0 /* Pods-firependu.debug.xcconfig */,
+				4F5E18A646C19546CADF0E4C /* Pods-firependu.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6AE505C21DE32D1400EDCE07 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				6AE505C31DE32D1400EDCE07 /* Game.swift */,
 				6AE505C41DE32D1400EDCE07 /* Player.swift */,
 				6AE505C51DE32D1400EDCE07 /* Turn.swift */,
+				6AE505D11DE3575800EDCE07 /* Word.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -73,17 +91,9 @@
 			isa = PBXGroup;
 			children = (
 				6AE505CB1DE32EBF00EDCE07 /* FirebaseManager.swift */,
+				6AE505D31DE3599A00EDCE07 /* FirebaseObjectProtocol.swift */,
 			);
 			path = Firebase;
-			sourceTree = "<group>";
-		};
-		3E79E2F60B00E764B4DF5D01 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C44FC1BF6EAA6660E31285F0 /* Pods-firependu.debug.xcconfig */,
-				4F5E18A646C19546CADF0E4C /* Pods-firependu.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		F1B731F6520EE026252A3BA4 /* Frameworks */ = {
@@ -136,6 +146,8 @@
 				F9D449441DE3077C00F3B9CD /* Main.storyboard */,
 				F9D449461DE3077C00F3B9CD /* GoogleService-Info.plist */,
 				F9D449471DE3077C00F3B9CD /* Info.plist */,
+				6AE505CF1DE34FD200EDCE07 /* String+extensions.swift */,
+				6AE505D51DE421F400EDCE07 /* words.txt */,
 			);
 			path = firependu;
 			sourceTree = "<group>";
@@ -204,6 +216,7 @@
 				F9D4494C1DE3077C00F3B9CD /* Main.storyboard in Resources */,
 				F9D4494D1DE3077C00F3B9CD /* GoogleService-Info.plist in Resources */,
 				F9D4494A1DE3077C00F3B9CD /* Assets.xcassets in Resources */,
+				6AE505D61DE421F400EDCE07 /* words.txt in Resources */,
 				F9D4494E1DE3077C00F3B9CD /* Info.plist in Resources */,
 				F9D4494B1DE3077C00F3B9CD /* LaunchScreen.storyboard in Resources */,
 			);
@@ -266,12 +279,15 @@
 			files = (
 				6AE505CC1DE32EBF00EDCE07 /* FirebaseManager.swift in Sources */,
 				F9504C4B1DE333380047ACA1 /* CreateAccountViewController.swift in Sources */,
+				6AE505D01DE34FD200EDCE07 /* String+extensions.swift in Sources */,
 				6AE505C71DE32D1400EDCE07 /* Player.swift in Sources */,
 				6AE505C81DE32D1400EDCE07 /* Turn.swift in Sources */,
+				6AE505D21DE3575800EDCE07 /* Word.swift in Sources */,
 				F9504C411DE329FD0047ACA1 /* LoginViewController.swift in Sources */,
 				6AE505C61DE32D1400EDCE07 /* Game.swift in Sources */,
 				F9D449491DE3077C00F3B9CD /* AppDelegate.swift in Sources */,
 				F9504C491DE32A570047ACA1 /* EndViewController.swift in Sources */,
+				6AE505D41DE3599A00EDCE07 /* FirebaseObjectProtocol.swift in Sources */,
 				F9504C471DE32A4C0047ACA1 /* GameViewController.swift in Sources */,
 				F9504C451DE32A3F0047ACA1 /* ListGameViewController.swift in Sources */,
 			);
