@@ -25,7 +25,8 @@ class GameBase {
 				snapshot in
 				let nb = snapshot.childrenCount
 				refGames.child("\(nb)").setValue(["name": game.name])
-				refGames.child("\(nb)").child("users").setValue(["host": user.uid])
+				refGames.child("\(nb)").child("users").child("host").setValue(["uid": user.uid,
+				                                                               "name": user.displayName])
 				self.currentGame = "\(nb)"
 			})
 		}
@@ -34,7 +35,8 @@ class GameBase {
 	func joinGame(name: String) {
 		if let user = FIRAuth.auth()?.currentUser {
 			let refGames = ref.child("Games")
-			refGames.child(name).child("users").setValue(["guest": user.uid])
+			refGames.child(name).child("users").child("guest").setValue(["uid": user.uid,
+			                                                             "name": user.displayName])
 			self.currentGame = name
 		}
 	}
@@ -42,8 +44,19 @@ class GameBase {
 	func gamesListObserver() {
 		ref.child("Games").observe(.childAdded, with: {
 			snapshot in
-			for child in snapshot.children {
-				print(child)
+//			let gameDataSource = [Game]()
+			if let games = snapshot.value as? [[String: AnyObject]] {
+				for gameSnapShot in games {
+					let name = gameSnapShot["name"] as? String ?? ""
+					let word = gameSnapShot["word"] as? String ?? ""
+					if let users = gameSnapShot["users"] as? [String: [String: String]] {
+						if users["guest"] == nil {
+							if let opponentName = users["host"]?["name"] {
+								print(name, word, opponentName)
+							}
+						}
+					}
+				}
 			}
 		})
 	}
