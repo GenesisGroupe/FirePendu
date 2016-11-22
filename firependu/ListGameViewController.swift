@@ -31,7 +31,7 @@ class ListGameViewController: GenericViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToGame" {
             let destination = segue.destination as! GameViewController
-            destination.game = sender as? Game
+                destination.game = sender as? Game
         }
     }
     
@@ -50,8 +50,8 @@ class ListGameViewController: GenericViewController {
                 guard let user = FIRAuth.auth()?.currentUser else {
                     return
                 }
-                let game = Game(gameID: nil, name: alertController.textFields![0].text!, word: "bonjour", host: Player(playerID: user.uid, nickName: user.displayName!), guest: nil)
-                GameManager().createGame(game: game)
+                let game = Game(gameID: nil, name: alertController.textFields![0].text!, word: "bonjour", host: Player(user: user), guest: nil)
+                GameManager().joinGame(game: game, isHost: true)
                 self.performSegue(withIdentifier: "goToGame", sender: game)
             } else {
                 self.showAlert(with: nil, message: "Vous devez entrer un nom pour votre partie", actions: nil)
@@ -77,6 +77,15 @@ class ListGameViewController: GenericViewController {
 extension ListGameViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let game = gameManager.gameDataSource[indexPath.row]
+        if !game.isOwnGame() && game.guest == nil {
+            guard let user = FIRAuth.auth()?.currentUser else {
+                return
+            }
+            game.guest = Player(user: user)
+            gameManager.joinGame(game: game, isHost: false)
+        }
+        self.performSegue(withIdentifier: "goToGame", sender: game)
         
     }
     
@@ -94,7 +103,7 @@ extension ListGameViewController: UITableViewDataSource {
         let game = gameManager.gameDataSource[indexPath.row]
         cell.textLabel?.text = game.name
         cell.detailTextLabel?.text = "Créée par \(game.host.nickName)"
-        
+        cell.backgroundColor = game.isOwnGame() ? UIColor.green : UIColor.orange
         return cell
     }
     

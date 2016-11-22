@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 final class Game {
     var gameID: String
@@ -23,5 +24,10 @@ final class Game {
         self.host = host
         self.guest = guest
     }
+    
+    func isOwnGame() -> Bool {
+        return host.playerID == FIRAuth.auth()?.currentUser?.uid
+    }
+    
     
 }

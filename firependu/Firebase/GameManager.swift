@@ -19,25 +19,15 @@ class GameManager {
 		self.ref = FIRDatabase.database().reference()
 	}
 	
-	func createGame(game: Game) {
+    func joinGame(game: Game, isHost: Bool) {
 		if let user = FIRAuth.auth()?.currentUser {
 			let refGames = ref.child("Games")
-            let host = ["name": user.displayName ?? "none", "uid": user.uid]
-            let values: [String: Any?] = ["id": game.gameID, "name": game.name, "word": game.word, "host": host]
+            let player = ["name": user.displayName ?? "none", "uid": user.uid]
+            let values: [String: Any?] = ["id": game.gameID, "name": game.name, "word": game.word, (isHost ? "host" : "guest") : player]
             refGames.child(game.gameID).setValue(values)
+		}
+	}
 
-		}
-	}
-	
-	func joinGame(name: String) {
-		if let user = FIRAuth.auth()?.currentUser {
-			let refGames = ref.child("Games")
-			refGames.child(name).child("guest").setValue(["uid": user.uid,
-			                                              "name": user.displayName ?? "noone"])
-			self.currentGame = name
-		}
-	}
-	
     func gamesListObserver( completionHandler: @escaping (_ refresh: Bool) -> Void) {
 		ref.child("Games").observe(.childAdded, with: {
 			snapshot in
