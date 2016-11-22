@@ -16,6 +16,7 @@ class User {
 			(user, error) in
 			if error == nil, let user = user {
 				print("User created")
+				
 				self.sendVerificationEmail(user: user)
 			}
 			else {
