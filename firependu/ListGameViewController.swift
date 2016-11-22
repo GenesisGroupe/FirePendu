@@ -82,10 +82,16 @@ extension ListGameViewController: UITableViewDelegate {
             guard let user = FIRAuth.auth()?.currentUser else {
                 return
             }
-            game.guest = Player(user: user)
-            gameManager.joinGame(game: game, isHost: false)
+            let joinAction = UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+                game.guest = Player(user: user)
+                self.gameManager.joinGame(game: game, isHost: false)
+                self.performSegue(withIdentifier: "goToGame", sender: game)
+            })
+            self.showAlert(with: nil, message: "Voulez-vous rejoindre cette partie ?", actions: [joinAction], and: "Annuler")
+        } else {
+            self.performSegue(withIdentifier: "goToGame", sender: game)
         }
-        self.performSegue(withIdentifier: "goToGame", sender: game)
+        
         
     }
     

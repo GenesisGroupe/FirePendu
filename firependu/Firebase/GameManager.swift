@@ -21,10 +21,13 @@ class GameManager {
 	
     func joinGame(game: Game, isHost: Bool) {
 		if let user = FIRAuth.auth()?.currentUser {
-			let refGames = ref.child("Games")
             let player = ["name": user.displayName ?? "none", "uid": user.uid]
-            let values: [String: Any?] = ["id": game.gameID, "name": game.name, "word": game.word, (isHost ? "host" : "guest") : player]
-            refGames.child(game.gameID).setValue(values)
+            if isHost {
+                let values: [String: Any?] = ["id": game.gameID, "name": game.name, "word": game.word, "host": player]
+                ref.child("Games").setValue(values)
+            } else {
+                ref.child("Games").child(game.gameID).child("guest").setValue(player)
+            }
 		}
 	}
 
@@ -47,7 +50,14 @@ class GameManager {
                     return
             }
             let hostPlayer = Player(playerID: uid, nickName: nickName)
-            let game = Game(gameID: gameID, name: name, word: word, host: hostPlayer, guest: nil)
+            var guestPlayer:Player?
+            if let guest = games["guest"] as? [String: AnyObject],
+                let guestID = guest["uid"] as? String,
+                let guestName = guest["name"] as? String{
+                guestPlayer = Player(playerID: guestID, nickName: guestName)
+            }
+            
+            let game = Game(gameID: gameID, name: name, word: word, host: hostPlayer, guest: guestPlayer)
             
             var index: Int?
             for (id, game) in self.gameDataSource.enumerated() {

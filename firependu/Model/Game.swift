@@ -17,13 +17,27 @@ final class Game {
     var guest: Player?
     var turns: [Turn] = [Turn]()
 
-    init(gameID: String?, name: String, word: String, host: Player, guest: Player?) {
+    init(gameID: String?, name: String, word: String?, host: Player, guest: Player?) {
         self.gameID = gameID ?? "\(Int(NSDate().timeIntervalSince1970))"
         self.name = name
-        self.word = word
+        self.word = word ?? Game.getRandomWord()
         self.host = host
         self.guest = guest
     }
+	
+	private class func getRandomWord() -> String {
+		var words: [String] = ["anglais",
+		                       "poids",
+		                       "chemise",
+		                       "africain",
+		                       "saint",
+		                       "garde",
+		                       "inondation",
+		                       "ciel",
+		                       "brasse",
+		                       "epitaphe"]
+		return words[Int(arc4random()) % words.count]
+	}
     
     func isOwnGame() -> Bool {
         return host.playerID == FIRAuth.auth()?.currentUser?.uid
