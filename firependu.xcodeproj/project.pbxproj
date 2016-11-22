@@ -8,17 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		056D97CE79B764A1C3947E80 /* Pods_firependu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A4F1DEA1C2B35035547D89 /* Pods_firependu.framework */; };
+		14AD44011DE35B67008B1B9F /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD44001DE35B67008B1B9F /* GameManager.swift */; };
+		6AE505C61DE32D1400EDCE07 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE505C31DE32D1400EDCE07 /* Game.swift */; };
+		6AE505C71DE32D1400EDCE07 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE505C41DE32D1400EDCE07 /* Player.swift */; };
+		6AE505C81DE32D1400EDCE07 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE505C51DE32D1400EDCE07 /* Turn.swift */; };
+		6AE505CC1DE32EBF00EDCE07 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE505CB1DE32EBF00EDCE07 /* FirebaseManager.swift */; };
 		F9504C411DE329FD0047ACA1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C401DE329FD0047ACA1 /* LoginViewController.swift */; };
 		F9504C451DE32A3F0047ACA1 /* ListGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C441DE32A3F0047ACA1 /* ListGameViewController.swift */; };
 		F9504C471DE32A4C0047ACA1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C461DE32A4C0047ACA1 /* GameViewController.swift */; };
 		F9504C491DE32A570047ACA1 /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C481DE32A570047ACA1 /* EndViewController.swift */; };
 		F9504C4B1DE333380047ACA1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C4A1DE333380047ACA1 /* CreateAccountViewController.swift */; };
-		F9504C4E1DE33BC40047ACA1 /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C4D1DE33BC40047ACA1 /* BorderedTextField.swift */; };
-		F9504C501DE340670047ACA1 /* LetterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9504C4F1DE340670047ACA1 /* LetterCell.swift */; };
-		F968834A1DE43C4000522FCD /* AuthentificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96883491DE43C4000522FCD /* AuthentificationManager.swift */; };
-		F968834D1DE43FF700522FCD /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968834B1DE43FF700522FCD /* Loader.swift */; };
-		F968834E1DE43FF700522FCD /* MultiColorLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968834C1DE43FF700522FCD /* MultiColorLoader.swift */; };
-		F96883501DE4400400522FCD /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968834F1DE4400400522FCD /* GenericViewController.swift */; };
+		F96883581DE4461F00522FCD /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96883541DE4461F00522FCD /* BorderedTextField.swift */; };
+		F96883591DE4461F00522FCD /* LetterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96883551DE4461F00522FCD /* LetterCell.swift */; };
+		F968835A1DE4461F00522FCD /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96883561DE4461F00522FCD /* Loader.swift */; };
+		F968835B1DE4461F00522FCD /* MultiColorLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96883571DE4461F00522FCD /* MultiColorLoader.swift */; };
+		F968835D1DE4462D00522FCD /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968835C1DE4462D00522FCD /* GenericViewController.swift */; };
+		F968835F1DE4463900522FCD /* AuthentificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968835E1DE4463900522FCD /* AuthentificationManager.swift */; };
 		F9D449491DE3077C00F3B9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D449401DE3077C00F3B9CD /* AppDelegate.swift */; };
 		F9D4494A1DE3077C00F3B9CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D449411DE3077C00F3B9CD /* Assets.xcassets */; };
 		F9D4494B1DE3077C00F3B9CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D449421DE3077C00F3B9CD /* LaunchScreen.storyboard */; };
@@ -28,7 +33,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14AD44001DE35B67008B1B9F /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		4F5E18A646C19546CADF0E4C /* Pods-firependu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.release.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.release.xcconfig"; sourceTree = "<group>"; };
+		6AE505C31DE32D1400EDCE07 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		6AE505C41DE32D1400EDCE07 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		6AE505C51DE32D1400EDCE07 /* Turn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
+		6AE505CB1DE32EBF00EDCE07 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		B2A4F1DEA1C2B35035547D89 /* Pods_firependu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firependu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44FC1BF6EAA6660E31285F0 /* Pods-firependu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firependu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firependu/Pods-firependu.debug.xcconfig"; sourceTree = "<group>"; };
 		F9504C401DE329FD0047ACA1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -36,12 +46,12 @@
 		F9504C461DE32A4C0047ACA1 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		F9504C481DE32A570047ACA1 /* EndViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
 		F9504C4A1DE333380047ACA1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		F9504C4D1DE33BC40047ACA1 /* BorderedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
-		F9504C4F1DE340670047ACA1 /* LetterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterCell.swift; sourceTree = "<group>"; };
-		F96883491DE43C4000522FCD /* AuthentificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationManager.swift; sourceTree = "<group>"; };
-		F968834B1DE43FF700522FCD /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
-		F968834C1DE43FF700522FCD /* MultiColorLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiColorLoader.swift; sourceTree = "<group>"; };
-		F968834F1DE4400400522FCD /* GenericViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
+		F96883541DE4461F00522FCD /* BorderedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
+		F96883551DE4461F00522FCD /* LetterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterCell.swift; sourceTree = "<group>"; };
+		F96883561DE4461F00522FCD /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		F96883571DE4461F00522FCD /* MultiColorLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiColorLoader.swift; sourceTree = "<group>"; };
+		F968835C1DE4462D00522FCD /* GenericViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
+		F968835E1DE4463900522FCD /* AuthentificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationManager.swift; sourceTree = "<group>"; };
 		F9D449281DE2ED9200F3B9CD /* firependu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firependu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D449401DE3077C00F3B9CD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D449411DE3077C00F3B9CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +82,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6AE505C21DE32D1400EDCE07 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6AE505C31DE32D1400EDCE07 /* Game.swift */,
+				6AE505C41DE32D1400EDCE07 /* Player.swift */,
+				6AE505C51DE32D1400EDCE07 /* Turn.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6AE505CA1DE32EB200EDCE07 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				F968835E1DE4463900522FCD /* AuthentificationManager.swift */,
+				6AE505CB1DE32EBF00EDCE07 /* FirebaseManager.swift */,
+				14AD44001DE35B67008B1B9F /* GameManager.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		F1B731F6520EE026252A3BA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,7 +113,7 @@
 		F9504C3F1DE329E00047ACA1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F968834F1DE4400400522FCD /* GenericViewController.swift */,
+				F968835C1DE4462D00522FCD /* GenericViewController.swift */,
 				F9504C401DE329FD0047ACA1 /* LoginViewController.swift */,
 				F9504C441DE32A3F0047ACA1 /* ListGameViewController.swift */,
 				F9504C461DE32A4C0047ACA1 /* GameViewController.swift */,
@@ -93,13 +123,13 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		F9504C4C1DE33B9C0047ACA1 /* Views */ = {
+		F96883531DE4460E00522FCD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F968834B1DE43FF700522FCD /* Loader.swift */,
-				F968834C1DE43FF700522FCD /* MultiColorLoader.swift */,
-				F9504C4D1DE33BC40047ACA1 /* BorderedTextField.swift */,
-				F9504C4F1DE340670047ACA1 /* LetterCell.swift */,
+				F96883541DE4461F00522FCD /* BorderedTextField.swift */,
+				F96883551DE4461F00522FCD /* LetterCell.swift */,
+				F96883561DE4461F00522FCD /* Loader.swift */,
+				F96883571DE4461F00522FCD /* MultiColorLoader.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -125,8 +155,9 @@
 		F9D4493F1DE3077C00F3B9CD /* firependu */ = {
 			isa = PBXGroup;
 			children = (
-				F96883491DE43C4000522FCD /* AuthentificationManager.swift */,
-				F9504C4C1DE33B9C0047ACA1 /* Views */,
+				F96883531DE4460E00522FCD /* Views */,
+				6AE505CA1DE32EB200EDCE07 /* Firebase */,
+				6AE505C21DE32D1400EDCE07 /* Model */,
 				F9504C3F1DE329E00047ACA1 /* Controllers */,
 				F9D449401DE3077C00F3B9CD /* AppDelegate.swift */,
 				F9D449411DE3077C00F3B9CD /* Assets.xcassets */,
@@ -262,18 +293,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F968834E1DE43FF700522FCD /* MultiColorLoader.swift in Sources */,
+				F968835D1DE4462D00522FCD /* GenericViewController.swift in Sources */,
+				6AE505CC1DE32EBF00EDCE07 /* FirebaseManager.swift in Sources */,
 				F9504C4B1DE333380047ACA1 /* CreateAccountViewController.swift in Sources */,
+				F968835B1DE4461F00522FCD /* MultiColorLoader.swift in Sources */,
+				6AE505C71DE32D1400EDCE07 /* Player.swift in Sources */,
+				6AE505C81DE32D1400EDCE07 /* Turn.swift in Sources */,
 				F9504C411DE329FD0047ACA1 /* LoginViewController.swift in Sources */,
+				6AE505C61DE32D1400EDCE07 /* Game.swift in Sources */,
+				F96883591DE4461F00522FCD /* LetterCell.swift in Sources */,
+				F96883581DE4461F00522FCD /* BorderedTextField.swift in Sources */,
+				14AD44011DE35B67008B1B9F /* GameManager.swift in Sources */,
 				F9D449491DE3077C00F3B9CD /* AppDelegate.swift in Sources */,
-				F9504C501DE340670047ACA1 /* LetterCell.swift in Sources */,
-				F968834D1DE43FF700522FCD /* Loader.swift in Sources */,
-				F96883501DE4400400522FCD /* GenericViewController.swift in Sources */,
 				F9504C491DE32A570047ACA1 /* EndViewController.swift in Sources */,
-				F968834A1DE43C4000522FCD /* AuthentificationManager.swift in Sources */,
+				F968835F1DE4463900522FCD /* AuthentificationManager.swift in Sources */,
 				F9504C471DE32A4C0047ACA1 /* GameViewController.swift in Sources */,
-				F9504C4E1DE33BC40047ACA1 /* BorderedTextField.swift in Sources */,
 				F9504C451DE32A3F0047ACA1 /* ListGameViewController.swift in Sources */,
+				F968835A1DE4461F00522FCD /* Loader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

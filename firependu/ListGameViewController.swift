@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ListGameViewController: UIViewController {
+    
+    private var gamesRefHandle: FIRDatabaseHandle?
+    private var games = [Game]()
     
     @IBOutlet weak var tvGames: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.observeGames()
         // Do any additional setup after loading the view.
     }
 
@@ -27,7 +31,23 @@ class ListGameViewController: UIViewController {
     @IBAction func actionCreateGame(_ sender: AnyObject) {
         performSegue(withIdentifier: "goToGame", sender: nil)
     }
-
+    
+    // MARK: Firebase related methods
+    private func observeGames() {
+        // Use the observe method to listen for new
+        // games being written to the Firebase DB
+        gamesRefHandle = FirebaseManager().gamesRef.observe(.childAdded, with: {[unowned self] (snapshot) -> Void in // 1
+            let gamesData = snapshot.value as! Dictionary<String, AnyObject> // 2
+            let id = snapshot.key
+            if let name = gamesData["name"] as? String, name.characters.count > 0 {
+                let game = Game(gameID: id, name: name)
+                self.games.append(game)
+                self.tvGames.reloadData()
+            } else {
+                print("Error! Could not decode channel data")
+            }
+        })
+    }
 }
 
 extension ListGameViewController: UITableViewDelegate {
