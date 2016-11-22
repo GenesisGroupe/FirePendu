@@ -11,7 +11,7 @@ import Foundation
 class Word {
     let value: String
     
-    init(value: String? = nil) {
+    init(_ value: String? = nil) {
         let words = value != nil ? [value!] : Word.computeWords()
         let index = Int(arc4random_uniform(UInt32(words.count)))
         self.value = words[index]

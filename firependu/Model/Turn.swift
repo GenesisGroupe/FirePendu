@@ -10,55 +10,64 @@ import Foundation
 import FirebaseDatabase
 
 final class Turn: FirebaseObjectProtocol {
-
-    private var turnsRefHandle: FIRDatabaseHandle?
-    private var turnRefHandle: FIRDatabaseHandle?
-    
-    internal var snapshot: FIRDataSnapshot!
-    
-    var turnID: String
-    var playerID: String
+    internal var snapshot: FIRDataSnapshot? { didSet {
+        key = snapshot?.key
+        }
+    }
+    var key: String?
+    var user: String
     var letter: Character
     
-    init(turnID: String = "", playerID: String = "", letter: Character = Character("")) {
-        self.turnID = turnID
-        self.playerID = playerID
+    var value: [String : Any] {
+        get {
+            var value = [String : Any]()
+            value["user"] = user
+            value["letter"] = String(letter)
+            
+            return value
+        }
+    }
+    
+    init(user: String = "", letter: Character = Character(" ")) {
+        self.user = user
         self.letter = letter
     }
     
     required convenience init(snapshot: FIRDataSnapshot) {
         self.init()
+        let data = snapshot.value as! [String : AnyObject]
+        let letterString = data["letter"] as? String
+        
         self.snapshot = snapshot
-        let turnData = snapshot.value as! Dictionary<String, AnyObject> // 2
-        self.turnID = snapshot.key
-        self.playerID = turnData["playerID"] as? String ?? ""
-        let letterString = turnData["letter"] as? String
-        self.letter = Character(letterString ?? "")
+        self.user = data["user"] as? String ?? ""
+        self.letter = Character(letterString ?? " ")
     }
     
     static func get(id pathString: String, with block:@escaping (Turn) -> Void) {
         FirebaseManager().turnsRef.child(pathString).observeSingleEvent(of: .value, with: {(snapshot) -> Void in
-            let turnData = snapshot.value as! Dictionary<String, AnyObject> // 2
-            let id = snapshot.key
-            let playerId = turnData["playerID"] as? String ?? ""
-            let letterString = turnData["letter"] as? String
-            let letter = Character(letterString ?? "")
-            let turn = Turn(turnID: id, playerID: playerId, letter: letter)
+            let turn = Turn(snapshot: snapshot)
             block(turn)
         })
     }
     
-    
-    
-    func save() {
+    func create() {
+        guard let _ = Player.currentPlayer else { return }
+        
+        let turnsRef = FirebaseManager().turnsRef
+        let newTurn = turnsRef.childByAutoId()
+        newTurn.setValuesForKeys(self.value)
         
     }
     
     func update() {
+        guard let key = key else { return }
         
+        let turn = FirebaseManager().turnsRef.child(key)
+        turn.updateChildValues(self.value)
     }
     
     func remove() {
-        
+        guard let key = key else { return }
+        FirebaseManager().turnsRef.child(key).removeValue()
     }
 }

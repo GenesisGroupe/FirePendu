@@ -15,6 +15,7 @@ class ListGameViewController: UIViewController {
     private var games = [Game]()
     
     @IBOutlet weak var tvGames: UITableView!
+    @IBOutlet weak var tfGameName: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,25 +29,20 @@ class ListGameViewController: UIViewController {
     }
 
     
-    @IBAction func actionCreateGame(_ sender: AnyObject) {        
-        //performSegue(withIdentifier: "goToGame", sender: nil)
+    @IBAction func actionCreateGame(_ sender: AnyObject) {
+        guard let name = tfGameName.text else { return }
+        
+        GameManager.sharedInstance.createGame(name: name)
     }
     
     // MARK: Firebase related methods
     private func observeGames() {
         // Use the observe method to listen for new
         // games being written to the Firebase DB
-        gamesRefHandle = FirebaseManager().gamesRef.observe(.childAdded, with: {[unowned self] (snapshot) -> Void in // 1
-            let gamesData = snapshot.value as! Dictionary<String, AnyObject> // 2
-            let id = snapshot.key
-            if let name = gamesData["name"] as? String, !name.isEmpty,
-               let word = gamesData["word"] as? String, !word.isEmpty {
-                    let game = Game(gameID: id, name: name, word: word)
-                    self.games.append(game)
-                    self.tvGames.reloadData()
-            } else {
-                print("Error! Could not decode games data")
-            }
+        gamesRefHandle = FirebaseManager().gamesRef.observe(.childAdded, with: {[unowned self] (snapshot) -> Void in
+            let game = Game(snapshot: snapshot)
+            self.games.append(game)
+            self.tvGames.reloadData()
         })
     }
 }
