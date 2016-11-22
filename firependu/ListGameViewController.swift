@@ -12,7 +12,7 @@ import FirebaseDatabase
 class ListGameViewController: UIViewController {
     
     private var gamesRefHandle: FIRDatabaseHandle?
-    private var games = [Game]()
+    var games = [Game]()
     
     @IBOutlet weak var tvGames: UITableView!
 
@@ -39,8 +39,9 @@ class ListGameViewController: UIViewController {
         gamesRefHandle = FirebaseManager().gamesRef.observe(.childAdded, with: {[unowned self] (snapshot) -> Void in // 1
             let gamesData = snapshot.value as! Dictionary<String, AnyObject> // 2
             let id = snapshot.key
-            if let name = gamesData["name"] as? String, name.characters.count > 0 {
-                let game = Game(gameID: id, name: name)
+            if let name = gamesData["name"] as? String, name.characters.count > 0,
+                let players = gamesData["players"] as? [Player], players.count == 1 {
+                let game = Game(gameID: id, name: name, players: players)
                 self.games.append(game)
                 self.tvGames.reloadData()
             } else {
@@ -61,11 +62,17 @@ extension ListGameViewController: UITableViewDelegate {
 extension ListGameViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return games.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell") ?? UITableViewCell(style: .default, reuseIdentifier: "gameCell")
+        
+        let game = games[indexPath.row]
+        cell.textLabel?.text = game.name
+        cell.detailTextLabel?.text = "Crée par \(game.players[0].nickName)"
+        
+        return cell
     }
     
 }

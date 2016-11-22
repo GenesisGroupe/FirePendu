@@ -24,6 +24,7 @@
 		F968835B1DE4461F00522FCD /* MultiColorLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96883571DE4461F00522FCD /* MultiColorLoader.swift */; };
 		F968835D1DE4462D00522FCD /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968835C1DE4462D00522FCD /* GenericViewController.swift */; };
 		F968835F1DE4463900522FCD /* AuthentificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968835E1DE4463900522FCD /* AuthentificationManager.swift */; };
+		F96883611DE4526C00522FCD /* PushNoAnimationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96883601DE4526C00522FCD /* PushNoAnimationSegue.swift */; };
 		F9D449491DE3077C00F3B9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D449401DE3077C00F3B9CD /* AppDelegate.swift */; };
 		F9D4494A1DE3077C00F3B9CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D449411DE3077C00F3B9CD /* Assets.xcassets */; };
 		F9D4494B1DE3077C00F3B9CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D449421DE3077C00F3B9CD /* LaunchScreen.storyboard */; };
@@ -52,6 +53,7 @@
 		F96883571DE4461F00522FCD /* MultiColorLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiColorLoader.swift; sourceTree = "<group>"; };
 		F968835C1DE4462D00522FCD /* GenericViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
 		F968835E1DE4463900522FCD /* AuthentificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationManager.swift; sourceTree = "<group>"; };
+		F96883601DE4526C00522FCD /* PushNoAnimationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNoAnimationSegue.swift; sourceTree = "<group>"; };
 		F9D449281DE2ED9200F3B9CD /* firependu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firependu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D449401DE3077C00F3B9CD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D449411DE3077C00F3B9CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		6AE505C21DE32D1400EDCE07 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F96883601DE4526C00522FCD /* PushNoAnimationSegue.swift */,
 				6AE505C31DE32D1400EDCE07 /* Game.swift */,
 				6AE505C41DE32D1400EDCE07 /* Player.swift */,
 				6AE505C51DE32D1400EDCE07 /* Turn.swift */,
@@ -296,6 +299,7 @@
 				F968835D1DE4462D00522FCD /* GenericViewController.swift in Sources */,
 				6AE505CC1DE32EBF00EDCE07 /* FirebaseManager.swift in Sources */,
 				F9504C4B1DE333380047ACA1 /* CreateAccountViewController.swift in Sources */,
+				F96883611DE4526C00522FCD /* PushNoAnimationSegue.swift in Sources */,
 				F968835B1DE4461F00522FCD /* MultiColorLoader.swift in Sources */,
 				6AE505C71DE32D1400EDCE07 /* Player.swift in Sources */,
 				6AE505C81DE32D1400EDCE07 /* Turn.swift in Sources */,

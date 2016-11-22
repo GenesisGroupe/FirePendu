@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: GenericViewController {
    
@@ -15,6 +16,9 @@ class LoginViewController: GenericViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if FIRAuth.auth()?.currentUser != nil {
+            performSegue(withIdentifier: "goToGameList_notAnimated", sender: nil)
+        }
         // Do any additional setup after loading the view.
     }
     
