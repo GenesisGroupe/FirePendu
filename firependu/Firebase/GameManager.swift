@@ -25,9 +25,10 @@ class GameManager {
 			refGames.observeSingleEvent(of: .value, with: {
 				snapshot in
 				let nb = snapshot.childrenCount
-				refGames.child("\(nb)").setValue(["name": game.name])
-				refGames.child("\(nb)").child("users").child("host").setValue(["uid": user.uid,
-				                                                               "name": user.displayName])
+				refGames.child("\(nb)").setValue(["id": "\(nb)",
+												  "name": game.name])
+				refGames.child("\(nb)").child("host").setValue(["name": user.displayName ?? "noone",
+				                                                "uid": user.uid])
 				self.currentGame = "\(nb)"
 			})
 		}
@@ -36,8 +37,8 @@ class GameManager {
 	func joinGame(name: String) {
 		if let user = FIRAuth.auth()?.currentUser {
 			let refGames = ref.child("Games")
-			refGames.child(name).child("users").child("guest").setValue(["uid": user.uid,
-			                                                             "name": user.displayName])
+			refGames.child(name).child("guest").setValue(["uid": user.uid,
+			                                              "name": user.displayName ?? "noone"])
 			self.currentGame = name
 		}
 	}
@@ -110,9 +111,13 @@ class GameManager {
 	
 	func addTurn(letter: String) {
 		if let user = FIRAuth.auth()?.currentUser, let currentGame = currentGame {
-			let refGames = ref.child("Games")
-			refGames.child(currentGame).child("turns").setValue(["letter": letter,
-			                                                     "user": user.uid])
+			let refTurns = ref.child("Games").child(currentGame).child("turns")
+			refTurns.observeSingleEvent(of: .value, with: {
+				snapshot in
+				refTurns.child("\(snapshot.childrenCount)")
+					.setValue(["letter": letter,
+					           "user": user.uid])
+				})
 		}
 	}
 	
