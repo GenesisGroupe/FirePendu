@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class Player {
     var playerID: String
@@ -16,5 +17,10 @@ class Player {
     init(playerID: String, nickName: String) {
         self.playerID = playerID
         self.nickName = nickName
+    }
+    
+    init(user: FIRUser) {
+        self.playerID = user.uid
+        self.nickName = user.displayName!
     }
 }

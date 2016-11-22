@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseDatabase
 
-class ListGameViewController: UIViewController {
+class ListGameViewController: GenericViewController {
     
     @IBOutlet weak var tvGames: UITableView!
     let gameManager = GameManager()
@@ -26,10 +27,41 @@ class ListGameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToGame" {
+            let destination = segue.destination as! GameViewController
+                destination.game = sender as? Game
+        }
+    }
+    
 
     
     @IBAction func actionCreateGame(_ sender: AnyObject) {
-        performSegue(withIdentifier: "goToGame", sender: nil)
+        let alertController = UIAlertController(title: nil, message: "Veuillez entrer un nom pour votre partie", preferredStyle: .alert)
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Nom de la partie"
+        }
+
+        let cancelAction = UIAlertAction(title: "Annuler", style: .default, handler: nil)
+        let saveAction = UIAlertAction(title: "Ok", style: .default, handler: {
+            alert -> Void in
+            if alertController.textFields![0].text != "" {
+                guard let user = FIRAuth.auth()?.currentUser else {
+                    return
+                }
+                let game = Game(gameID: nil, name: alertController.textFields![0].text!, word: "bonjour", host: Player(user: user), guest: nil)
+                GameManager().joinGame(game: game, isHost: true)
+                self.performSegue(withIdentifier: "goToGame", sender: game)
+            } else {
+                self.showAlert(with: nil, message: "Vous devez entrer un nom pour votre partie", actions: nil)
+            }
+        })
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     // MARK: Firebase related methods
@@ -45,6 +77,15 @@ class ListGameViewController: UIViewController {
 extension ListGameViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let game = gameManager.gameDataSource[indexPath.row]
+        if !game.isOwnGame() && game.guest == nil {
+            guard let user = FIRAuth.auth()?.currentUser else {
+                return
+            }
+            game.guest = Player(user: user)
+            gameManager.joinGame(game: game, isHost: false)
+        }
+        self.performSegue(withIdentifier: "goToGame", sender: game)
         
     }
     
@@ -62,7 +103,7 @@ extension ListGameViewController: UITableViewDataSource {
         let game = gameManager.gameDataSource[indexPath.row]
         cell.textLabel?.text = game.name
         cell.detailTextLabel?.text = "Créée par \(game.host.nickName)"
-        
+        cell.backgroundColor = game.isOwnGame() ? UIColor.green : UIColor.orange
         return cell
     }
     

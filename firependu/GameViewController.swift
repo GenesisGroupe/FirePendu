@@ -16,12 +16,15 @@ class GameViewController: UIViewController {
     @IBOutlet weak var cvWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var cvHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var cvLetters: UICollectionView!
-    var word: String = "bonjour"
+    var game: Game?
     var letters: [String?] = [String?]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        for char in word.characters {
+        guard let game = self.game else {
+            return
+        }
+        for char in game.word.characters {
             letters.append(char == " " || char == "-" ? "\(char)" : nil)
         }
         drawCollectionView()
