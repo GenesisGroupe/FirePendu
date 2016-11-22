@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseDatabase
 
-class ListGameViewController: UIViewController {
+class ListGameViewController: GenericViewController {
     
     @IBOutlet weak var tvGames: UITableView!
     let gameManager = GameManager()
@@ -26,10 +27,41 @@ class ListGameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToGame" {
+            let destination = segue.destination as! GameViewController
+            destination.game = sender as? Game
+        }
+    }
+    
 
     
     @IBAction func actionCreateGame(_ sender: AnyObject) {
-        performSegue(withIdentifier: "goToGame", sender: nil)
+        let alertController = UIAlertController(title: nil, message: "Veuillez entrer un nom pour votre partie", preferredStyle: .alert)
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Nom de la partie"
+        }
+
+        let cancelAction = UIAlertAction(title: "Annuler", style: .default, handler: nil)
+        let saveAction = UIAlertAction(title: "Ok", style: .default, handler: {
+            alert -> Void in
+            if alertController.textFields![0].text != "" {
+                guard let user = FIRAuth.auth()?.currentUser else {
+                    return
+                }
+                let game = Game(gameID: nil, name: alertController.textFields![0].text!, word: "bonjour", host: Player(playerID: user.uid, nickName: user.displayName!), guest: nil)
+                GameManager().createGame(game: game)
+                self.performSegue(withIdentifier: "goToGame", sender: game)
+            } else {
+                self.showAlert(with: nil, message: "Vous devez entrer un nom pour votre partie", actions: nil)
+            }
+        })
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     // MARK: Firebase related methods

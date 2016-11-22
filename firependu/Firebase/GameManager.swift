@@ -22,15 +22,10 @@ class GameManager {
 	func createGame(game: Game) {
 		if let user = FIRAuth.auth()?.currentUser {
 			let refGames = ref.child("Games")
-			refGames.observeSingleEvent(of: .value, with: {
-				snapshot in
-				let nb = snapshot.childrenCount
-				refGames.child("\(nb)").setValue(["id": "\(nb)",
-												  "name": game.name])
-				refGames.child("\(nb)").child("host").setValue(["name": user.displayName ?? "noone",
-				                                                "uid": user.uid])
-				self.currentGame = "\(nb)"
-			})
+            let host = ["name": user.displayName ?? "none", "uid": user.uid]
+            let values: [String: Any?] = ["id": game.gameID, "name": game.name, "word": game.word, "host": host]
+            refGames.child(game.gameID).setValue(values)
+
 		}
 	}
 	
