@@ -13,7 +13,7 @@ class Player {
     var nickName: String
     var score: Int
     
-    init(playerID: String, nickName: String, score: Int) {
+    init(playerID: String = "", nickName: String = "", score: Int = 0) {
         self.playerID = playerID
         self.nickName = nickName
         self.score = score

@@ -10,10 +10,14 @@ import Foundation
 import FirebaseDatabase
 
 class FirebaseManager {
-    lazy var gamesRef: FIRDatabaseReference = FIRDatabase.database().reference().child("games")
-    lazy var playersRef: FIRDatabaseReference = FIRDatabase.database().reference().child("players")
-    lazy var turnsRef: FIRDatabaseReference = FIRDatabase.database().reference().child("turns")
+    let ref = FIRDatabase.database().reference()
+    let gamesRef: FIRDatabaseReference
+    let playersRef: FIRDatabaseReference
+    let turnsRef: FIRDatabaseReference
     
-    public init() { }
-    
+    public init() {
+        gamesRef = ref.child("games")
+        playersRef = ref.child("players")
+        turnsRef = ref.child("turns")
+    }
 }
