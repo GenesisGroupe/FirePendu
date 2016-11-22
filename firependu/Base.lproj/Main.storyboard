@@ -148,11 +148,20 @@
                                             <outlet property="delegate" destination="vV5-0r-2KD" id="DDf-cz-T9n"/>
                                         </connections>
                                     </collectionView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46w-Or-ev7">
+                                        <rect key="frame" x="40" y="33" width="295" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="ugs-v6-hex" firstAttribute="centerY" secondItem="jD4-F4-hRE" secondAttribute="centerY" id="B8C-MK-t3a"/>
+                                    <constraint firstAttribute="trailing" secondItem="46w-Or-ev7" secondAttribute="trailing" constant="40" id="J3B-Um-tGI"/>
                                     <constraint firstItem="ugs-v6-hex" firstAttribute="centerX" secondItem="jD4-F4-hRE" secondAttribute="centerX" id="Lcv-0W-31j"/>
+                                    <constraint firstItem="46w-Or-ev7" firstAttribute="top" secondItem="jD4-F4-hRE" secondAttribute="top" constant="33" id="qEp-dq-O5C"/>
+                                    <constraint firstItem="46w-Or-ev7" firstAttribute="leading" secondItem="jD4-F4-hRE" secondAttribute="leading" constant="40" id="vGP-W9-bt5"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6H-mA-q6N">
@@ -181,6 +190,51 @@
                                     <action selector="actionAskForWord:" destination="vV5-0r-2KD" eventType="touchUpInside" id="7RU-cV-7wC"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4s-0Z-eEK">
+                                <rect key="frame" x="0.0" y="417" width="375" height="250"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejy-CH-xmp">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="5Ng-5y-Qft"/>
+                                            <constraint firstAttribute="width" constant="100" id="VyL-tp-KYG"/>
+                                        </constraints>
+                                        <state key="normal" title="Annuler"/>
+                                        <connections>
+                                            <action selector="actionCancel:" destination="vV5-0r-2KD" eventType="touchUpInside" id="ijK-UR-VH9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9C-5M-ais">
+                                        <rect key="frame" x="275" y="0.0" width="100" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="3Wo-Q5-jPq"/>
+                                            <constraint firstAttribute="width" constant="100" id="OFg-pm-ZGd"/>
+                                        </constraints>
+                                        <state key="normal" title="Ok"/>
+                                        <connections>
+                                            <action selector="actionOK:" destination="vV5-0r-2KD" eventType="touchUpInside" id="bkr-aA-Tdg"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v29-cA-vc4">
+                                        <rect key="frame" x="0.0" y="34" width="375" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="vV5-0r-2KD" id="423-Vj-ACI"/>
+                                            <outlet property="delegate" destination="vV5-0r-2KD" id="as7-W5-u27"/>
+                                        </connections>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="y9C-5M-ais" firstAttribute="top" secondItem="y4s-0Z-eEK" secondAttribute="top" id="5h3-UB-sR1"/>
+                                    <constraint firstItem="v29-cA-vc4" firstAttribute="leading" secondItem="y4s-0Z-eEK" secondAttribute="leading" id="7OI-vW-YLb"/>
+                                    <constraint firstAttribute="trailing" secondItem="y9C-5M-ais" secondAttribute="trailing" id="8tG-cZ-FFV"/>
+                                    <constraint firstItem="Ejy-CH-xmp" firstAttribute="top" secondItem="y4s-0Z-eEK" secondAttribute="top" id="Lmh-rM-CJE"/>
+                                    <constraint firstItem="Ejy-CH-xmp" firstAttribute="leading" secondItem="y4s-0Z-eEK" secondAttribute="leading" id="R9S-Yk-vn2"/>
+                                    <constraint firstAttribute="height" constant="250" id="UeH-5S-u0D"/>
+                                    <constraint firstAttribute="trailing" secondItem="v29-cA-vc4" secondAttribute="trailing" id="cPl-Zk-z13"/>
+                                    <constraint firstAttribute="bottom" secondItem="v29-cA-vc4" secondAttribute="bottom" id="ryQ-TQ-f89"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -189,7 +243,10 @@
                             <constraint firstItem="8Jo-SL-J3c" firstAttribute="leading" secondItem="b6H-mA-q6N" secondAttribute="trailing" id="4RG-WE-j2Z"/>
                             <constraint firstItem="b6H-mA-q6N" firstAttribute="width" secondItem="8Jo-SL-J3c" secondAttribute="width" id="6kH-IN-e0F"/>
                             <constraint firstItem="jD4-F4-hRE" firstAttribute="leading" secondItem="lnq-Ly-Cp7" secondAttribute="leading" id="Kd4-mW-6Di"/>
+                            <constraint firstItem="y4s-0Z-eEK" firstAttribute="leading" secondItem="lnq-Ly-Cp7" secondAttribute="leading" id="LTY-Wx-hX5"/>
+                            <constraint firstItem="8cK-8R-Qhd" firstAttribute="top" secondItem="y4s-0Z-eEK" secondAttribute="bottom" id="PIj-fz-ACI"/>
                             <constraint firstItem="8cK-8R-Qhd" firstAttribute="top" secondItem="b6H-mA-q6N" secondAttribute="bottom" id="SMn-c9-IDb"/>
+                            <constraint firstAttribute="trailing" secondItem="y4s-0Z-eEK" secondAttribute="trailing" id="VBF-DA-jJe"/>
                             <constraint firstItem="b6H-mA-q6N" firstAttribute="leading" secondItem="lnq-Ly-Cp7" secondAttribute="leading" id="VNO-FA-wYk"/>
                             <constraint firstAttribute="trailing" secondItem="8Jo-SL-J3c" secondAttribute="trailing" id="lcI-7h-gZ6"/>
                             <constraint firstAttribute="trailing" secondItem="jD4-F4-hRE" secondAttribute="trailing" id="mjg-qX-7oJ"/>
@@ -197,9 +254,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnAddLetter" destination="b6H-mA-q6N" id="d7w-hh-SIy"/>
+                        <outlet property="btnAddWord" destination="8Jo-SL-J3c" id="e3U-kD-yTb"/>
                         <outlet property="cvHeightConstraint" destination="ONj-EY-0Y8" id="ReE-RD-Bw9"/>
                         <outlet property="cvLetters" destination="ugs-v6-hex" id="yN7-RY-erU"/>
                         <outlet property="cvWidthConstraint" destination="YDR-gn-pPq" id="MNy-TI-IeF"/>
+                        <outlet property="lblInfo" destination="46w-Or-ev7" id="Ofe-Mm-juq"/>
+                        <outlet property="picker" destination="v29-cA-vc4" id="erq-zp-nDJ"/>
+                        <outlet property="pickerView" destination="y4s-0Z-eEK" id="KXJ-BI-hRP"/>
                         <segue destination="iik-9E-Wd8" kind="show" identifier="goToEndGame" id="HB5-pQ-cj0"/>
                     </connections>
                 </viewController>

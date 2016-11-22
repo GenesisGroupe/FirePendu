@@ -44,4 +44,11 @@ final class Game {
     }
     
     
+    func isOwnTurn() -> Bool {
+        print("TURN USER ID \(turns.last?.userID ?? "nil")")
+        print(FIRAuth.auth()?.currentUser?.uid ?? "nil")
+        return turns.last == nil || turns.last?.userID != FIRAuth.auth()?.currentUser?.uid
+    }
+    
+    
 }

@@ -12,8 +12,8 @@ import FirebaseDatabase
 
 class GameManager {
 	var ref: FIRDatabaseReference!
-	var currentGame: String? = nil
     var gameDataSource = [Game]()
+    var turnsDataSource = [Turn]()
 	
 	init() {
 		self.ref = FIRDatabase.database().reference()
@@ -84,34 +84,48 @@ class GameManager {
 		})
 	}
 	
-	func gameTurnObserver() {
-		if let user = FIRAuth.auth()?.currentUser, let currentGame = currentGame {
-			ref.child("Games").child(currentGame).child("turns").observe(.childAdded, with: {
-				snapshot in
-				if let turns = snapshot.value as? [[String: String]] {
-					if let newTurn = turns.last {
-						if let userUid = newTurn["user"] {
-							if userUid != user.uid {
-								print("Opponent played")
-								if let letter = newTurn["letter"] {
-									print("He try the letter: \(letter)")
-								}
-							}
-						}
-					}
-				}
-			})
-		}
+    func gameTurnObserver(game: Game, completionHandler: @escaping (_ refresh: Bool) -> Void) {
+		
+        ref.child("Games").child(game.gameID).child("turns").observe(.childAdded, with: {
+            snapshot in
+            
+            guard let turns = snapshot.value as? [String: String] else {
+                completionHandler(false)
+                return
+            }
+            guard let turnID = turns["id"], let letter = turns["letter"], let userID = turns["user"] else {
+                completionHandler(false)
+                return
+            }
+            
+            let turn = Turn(turnID: turnID, userID: userID, letter: letter)
+            
+            var index: Int?
+            for (id, turn) in self.turnsDataSource.enumerated() {
+                if turn.turnID == turnID {
+                    index = id
+                    break
+                }
+            }
+            if index == nil {
+                print(turn.letter)
+                self.turnsDataSource.append(turn)
+                completionHandler(true)
+            }
+        
+        })
+		
 		
 	}
 	
-	func addTurn(letter: String) {
-		if let user = FIRAuth.auth()?.currentUser, let currentGame = currentGame {
-			let refTurns = ref.child("Games").child(currentGame).child("turns")
+    func addTurn(game: Game, turn: Turn) {
+		if let user = FIRAuth.auth()?.currentUser {
+			let refTurns = ref.child("Games").child(game.gameID).child("turns")
 			refTurns.observeSingleEvent(of: .value, with: {
 				snapshot in
 				refTurns.child("\(snapshot.childrenCount)")
-					.setValue(["letter": letter,
+					.setValue(["id": turn.turnID,
+                            "letter": turn.letter,
 					           "user": user.uid])
 				})
 		}

@@ -7,15 +7,17 @@
 //
 
 import Foundation
+import Firebase
 
 class Turn {
     let turnID: String
-    let player: Player
-    let letter: Character
+    let userID: String
+    let letter: String
     
-    init(turnID: String, player: Player, letter: Character) {
-        self.turnID = turnID
-        self.player = player
+    init(turnID: String?, userID: String, letter: String) {
+        self.turnID = turnID ?? "\(Int(NSDate().timeIntervalSince1970))"
+        self.userID = userID
         self.letter = letter
     }
+    
 }
