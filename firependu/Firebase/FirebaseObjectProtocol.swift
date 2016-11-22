@@ -15,7 +15,7 @@ protocol FirebaseObjectProtocol {
     var ref: FIRDatabaseReference? { get }
     var value: [String : Any] { get }
     
-    init(snapshot: FIRDataSnapshot)
+    init?(snapshot: FIRDataSnapshot)
     static func get(id pathString: String, with block: @escaping (Self) -> Void)
     func create()
     func update()

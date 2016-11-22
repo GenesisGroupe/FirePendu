@@ -8,9 +8,15 @@
 
 import Foundation
 import FirebaseDatabase
+import Firebase
 
 final class Player: FirebaseObjectProtocol {
-    static var currentPlayer: Player?
+    static var currentPlayer: Player? {
+        get {
+            guard let currentUser = FIRAuth.auth()?.currentUser else { return nil }
+            return Player(user: currentUser)
+        }
+    }
     
     internal var snapshot: FIRDataSnapshot? { didSet {
         key = snapshot?.key
@@ -31,22 +37,31 @@ final class Player: FirebaseObjectProtocol {
         }
     }
     
-    init(name: String = "") {
+    init(uid: String? = nil, name: String = "") {
+        if let uid = uid {
+            self.key = uid
+        }
         self.name = name
     }
     
-    required convenience init(snapshot: FIRDataSnapshot) {
-        self.init()
-        let data = snapshot.value as! [String : Any]
+    convenience init(user: FIRUser) {
+        let name = user.displayName ?? ""
+        self.init(uid: user.uid, name: name)
+    }
+    
+    required convenience init?(snapshot: FIRDataSnapshot) {
+        guard let data = snapshot.value as? [String : Any] else { return nil }
         
+        self.init()
         self.snapshot = snapshot
         self.name = (data["name"] as? String) ?? ""
     }
     
     static func get(id pathString: String, with block: @escaping (Player) -> Void) {
         FirebaseManager().playersRef.child(pathString).observeSingleEvent(of: .value, with: {(snapshot) -> Void in
-            let player = Player(snapshot: snapshot)
-            block(player)
+            if let player = Player(snapshot: snapshot) {
+                block(player)
+            }
         })
     }
     

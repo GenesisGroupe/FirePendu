@@ -13,6 +13,7 @@ import FirebaseDatabase
 final class GameManager {
     static let sharedInstance: GameManager = GameManager()
 	var currentGame: Game? = nil
+    var games = [Game]()
 	
 	private init() { }
 	
@@ -49,6 +50,37 @@ final class GameManager {
     func quitGame() {
         self.currentGame = nil
     }
+
+//class GameManager {
+//	var ref: FIRDatabaseReference!
+//	var currentGame: String? = nil
+//    var gameDataSource = [Game]()
+//	
+//	init() {
+//		self.ref = FIRDatabase.database().reference()
+//	}
+//	
+//    func joinGame(game: Game, isHost: Bool) {
+//		if let user = FIRAuth.auth()?.currentUser {
+//            let player = ["name": user.displayName ?? "none", "uid": user.uid]
+//            if isHost {
+//                let values: [String: Any?] = ["id": game.gameID, "name": game.name, "word": game.word, "host": player]
+//                ref.child("Games").setValue(values)
+//            } else {
+//                ref.child("Games").child(game.gameID).child("guest").setValue(player)
+//            }
+//		}
+//	}
+//
+    func gamesListObserver( completionHandler: @escaping (_ refresh: Bool) -> Void) {
+        FirebaseManager().gamesRef.observe(.childAdded, with: {[unowned self] (snapshot) -> Void in
+            if let game = Game(snapshot: snapshot) {
+                self.games.append(game)
+                completionHandler(true)
+            }
+        })
+	}
+//>>>>>>> 8a8d2cc8d7381ee283acc89fd0158637d0b48e6d
 	
 //	func gameStartObserver(name: String) {
 //		ref.child("Games").child(name).child("users").observeSingleEvent(of: .childAdded, with: {

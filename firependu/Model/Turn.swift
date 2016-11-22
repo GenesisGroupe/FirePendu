@@ -33,9 +33,9 @@ final class Turn: FirebaseObjectProtocol {
         self.letter = letter
     }
     
-    required convenience init(snapshot: FIRDataSnapshot) {
+    required convenience init?(snapshot: FIRDataSnapshot) {
+        guard let data = snapshot.value as? [String : Any] else { return nil }
         self.init()
-        let data = snapshot.value as! [String : AnyObject]
         let letterString = data["letter"] as? String
         
         self.snapshot = snapshot
@@ -45,8 +45,9 @@ final class Turn: FirebaseObjectProtocol {
     
     static func get(id pathString: String, with block:@escaping (Turn) -> Void) {
         FirebaseManager().turnsRef.child(pathString).observeSingleEvent(of: .value, with: {(snapshot) -> Void in
-            let turn = Turn(snapshot: snapshot)
-            block(turn)
+            if let turn = Turn(snapshot: snapshot) {
+                block(turn)
+            }
         })
     }
     

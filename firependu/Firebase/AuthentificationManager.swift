@@ -12,6 +12,9 @@ import Firebase
 class AuthentificationManager {
     
     static let shared = AuthentificationManager()
+    
+    
+    private init() {}
 	
     func register(withEmail email: String, _ password: String, andUsername username: String, completionHandler: @escaping (_ user: FIRUser?, _ error: Error?) -> Void) {
 		FIRAuth.auth()?.createUser(withEmail: email, password: password) {

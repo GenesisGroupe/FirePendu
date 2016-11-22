@@ -19,9 +19,16 @@ final class Game: FirebaseObjectProtocol {
     var key: String?
     var name: String
     var word: Word
-    var guest: Player?
     var host: Player?
+    var guest: Player?
     var turns: [Turn]
+    var isOwnGame: Bool { get {
+        guard let hostKey = self.host?.key, let currentPlayerKey = Player.currentPlayer?.key  else {
+            return false
+        }
+            return hostKey == currentPlayerKey
+        }
+    }
     
     var value: [String : Any] {
         get {
@@ -48,9 +55,10 @@ final class Game: FirebaseObjectProtocol {
         self.turns = turns
     }
     
-    required convenience init(snapshot: FIRDataSnapshot) {
+    required convenience init?(snapshot: FIRDataSnapshot) {
+        guard let data = snapshot.value as? [String : Any] else { return nil }
+        
         self.init()
-        let data = snapshot.value as! [String : Any]
         let name = data["name"] as? String ?? ""
         let word = data["word"] as? String
         let host = Player(snapshot: snapshot.childSnapshot(forPath: "host"))
@@ -58,7 +66,9 @@ final class Game: FirebaseObjectProtocol {
         var turns = [Turn]()
         for child in snapshot.childSnapshot(forPath: "turns").children {
             if let child = child as? FIRDataSnapshot {
-                turns.append(Turn(snapshot: child))
+                if let turn = Turn(snapshot: child) {
+                    turns.append(turn)
+                }
             }
         }
         
@@ -70,6 +80,7 @@ final class Game: FirebaseObjectProtocol {
         self.turns = turns
     }
     
+    
     func add(turn: Turn) {
         guard let key = self.key else { return }
         
@@ -80,18 +91,19 @@ final class Game: FirebaseObjectProtocol {
     
     static func get(id pathString: String, with block:@escaping (Game) -> Void) {
         FirebaseManager().gamesRef.child(pathString).observeSingleEvent(of: .value, with: {(snapshot) -> Void in
-            let game = Game(snapshot: snapshot)
-            block(game)
+            if let game = Game(snapshot: snapshot) {
+                block(game)
+            }
         })
     }
     
     func joinGame(with block: @escaping (Bool) -> Void) {
-        guard let user = FIRAuth.auth()?.currentUser, guest != nil else {
+        guard let playerKey = Player.currentPlayer?.key, guest != nil else {
             block(false)
             return
         }
         
-        FirebaseManager().playersRef.child(user.uid).observeSingleEvent(of: .value, with: {[unowned self](snapshot) -> Void in
+        FirebaseManager().playersRef.child(playerKey).observeSingleEvent(of: .value, with: {[unowned self](snapshot) -> Void in
             self.guest = Player(snapshot: snapshot)
             self.update()
             block(true)
@@ -103,8 +115,7 @@ final class Game: FirebaseObjectProtocol {
         
         let gamesRef = FirebaseManager().gamesRef
         let newGame = gamesRef.childByAutoId()
-        newGame.setValuesForKeys(self.value)
-        
+        newGame.setValue(self.value)        
     }
     
     func update() {
