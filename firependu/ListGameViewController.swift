@@ -50,7 +50,7 @@ class ListGameViewController: GenericViewController {
                 guard let user = FIRAuth.auth()?.currentUser else {
                     return
                 }
-                let game = Game(gameID: nil, name: alertController.textFields![0].text!, word: "bonjour", host: Player(user: user), guest: nil)
+                let game = Game(gameID: nil, name: alertController.textFields![0].text!, word: nil, host: Player(user: user), guest: nil)
                 GameManager().joinGame(game: game, isHost: true)
                 self.performSegue(withIdentifier: "goToGame", sender: game)
             } else {
