@@ -13,6 +13,7 @@ import FirebaseDatabase
 class GameManager {
 	var ref: FIRDatabaseReference!
 	var currentGame: String? = nil
+    var gameDataSource = [Game]()
 	
 	init() {
 		self.ref = FIRDatabase.database().reference()
@@ -41,23 +42,39 @@ class GameManager {
 		}
 	}
 	
-	func gamesListObserver() {
+    func gamesListObserver( completionHandler: @escaping (_ refresh: Bool) -> Void) {
 		ref.child("Games").observe(.childAdded, with: {
 			snapshot in
-//			let gameDataSource = [Game]()
-			if let games = snapshot.value as? [[String: AnyObject]] {
-				for gameSnapShot in games {
-					let name = gameSnapShot["name"] as? String ?? ""
-					let word = gameSnapShot["word"] as? String ?? ""
-					if let users = gameSnapShot["users"] as? [String: [String: String]] {
-						if users["guest"] == nil {
-							if let opponentName = users["host"]?["name"] {
-								print(name, word, opponentName)
-							}
-						}
-					}
-				}
-			}
+            guard let games = snapshot.value as? [String: AnyObject] else {
+                completionHandler(false)
+                return
+            }
+            let gameID = games["id"] as? String ?? ""
+            let name = games["name"] as? String ?? ""
+            let word = games["word"] as? String ?? ""
+            guard games["guest"] == nil,
+                let host = games["host"] as? [String: AnyObject],
+                let uid = host["uid"] as? String,
+                let nickName = host["name"] as? String else {
+                    completionHandler(false)
+                    return
+            }
+            let hostPlayer = Player(playerID: uid, nickName: nickName)
+            let game = Game(gameID: gameID, name: name, word: word, host: hostPlayer, guest: nil)
+            
+            var index: Int?
+            for (id, game) in self.gameDataSource.enumerated() {
+                if game.gameID == gameID {
+                    index = id
+                    break
+                }
+            }
+            if index == nil {
+                self.gameDataSource.append(game)
+            } else {
+                self.gameDataSource[index!] = game
+            }
+            completionHandler(true)
 		})
 	}
 	
