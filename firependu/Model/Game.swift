@@ -98,7 +98,7 @@ final class Game: FirebaseObjectProtocol {
     }
     
     func joinGame(with block: @escaping (Bool) -> Void) {
-        guard let playerKey = Player.currentPlayer?.key, guest != nil else {
+        guard let playerKey = Player.currentPlayer?.key, guest != nil, !isOwnGame else {
             block(false)
             return
         }

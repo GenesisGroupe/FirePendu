@@ -21,6 +21,7 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.game = GameManager.sharedInstance.currentGame
         guard let game = self.game else {
             return
         }

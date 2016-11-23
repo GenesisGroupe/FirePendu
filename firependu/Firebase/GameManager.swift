@@ -47,6 +47,10 @@ final class GameManager {
         }
     }
     
+    func start(game: Game) {
+        self.currentGame = game
+    }
+    
     func quitGame() {
         self.currentGame = nil
     }
@@ -74,12 +78,18 @@ final class GameManager {
 //
     func gamesListObserver( completionHandler: @escaping (_ refresh: Bool) -> Void) {
         FirebaseManager().gamesRef.observe(.childAdded, with: {[unowned self] (snapshot) -> Void in
-            if let game = Game(snapshot: snapshot) {
+            if let game = Game(snapshot: snapshot), self.gameIsDisplayed(game: game) {
                 self.games.append(game)
                 completionHandler(true)
             }
         })
 	}
+    
+    private func gameIsDisplayed(game: Game) -> Bool {
+        guard let currentPlayerKey = Player.currentPlayer?.key else { return false }
+        
+        return game.isOwnGame || game.guest == nil || game.guest!.key == currentPlayerKey
+    }
 //>>>>>>> 8a8d2cc8d7381ee283acc89fd0158637d0b48e6d
 	
 //	func gameStartObserver(name: String) {

@@ -36,7 +36,6 @@ class ListGameViewController: GenericViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToGame" {
             let destination = segue.destination as! GameViewController
-                destination.game = sender as? Game
         }
     }
     
@@ -59,11 +58,13 @@ class ListGameViewController: GenericViewController {
 extension ListGameViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let game = GameManager.sharedInstance.games[indexPath.row]
-        if !game.isOwnGame && game.guest == nil {
-            guard let _ = Player.currentPlayer else {
-                return
-            }
+        let game = gameManager.games[indexPath.row]
+        if game.isOwnGame {
+            gameManager.start(game: game)
+            self.performSegue(withIdentifier: "goToGame", sender: nil)
+        }
+        else if game.guest == nil {
+            guard let _ = Player.currentPlayer else { return }
             
             let joinAction = UIAlertAction(title: "Ok", style: .default, handler: {[unowned self] (_) in
                 self.gameManager.join(game: game, with: {[unowned self] (success) in
@@ -73,11 +74,7 @@ extension ListGameViewController: UITableViewDelegate {
                 })
             })
             self.showAlert(with: nil, message: "Voulez-vous rejoindre cette partie ?", actions: [joinAction], and: "Annuler")
-        } else {
-            self.performSegue(withIdentifier: "goToGame", sender: nil)
         }
-        
-        
     }
     
 }
